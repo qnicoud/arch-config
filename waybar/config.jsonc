@@ -1,0 +1,153 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+    "output": "DP-2",
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/spotify", "pulseaudio", "network", "group/hardware", "tray", "clock", "group/misc"],
+    "group/hardware":{
+        "orientation": "horizontal",
+        "modules": ["cpu", "custom/separator", "memory"] 
+    },
+    "group/misc":{
+        "orientation": "horizontal",
+        "modules": ["custom/wallpaper", "custom/separator", "idle_inhibitor", "custom/separator", "custom/exit"] 
+    },
+    "custom/spotify": {
+        "format": "{icon} - <span style=\"italic\">{0}</span>", //"format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl -p spotify_player play-pause",
+        "on-click-right": "killall spotify_player",
+        "smooth-scrolling-threshold": 1, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up" : "playerctl -p spotify_player next",
+        "on-scroll-down" : "playerctl -p spotify_player previous",
+        "exec": "${HOME}/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+        "exec-if": "bash -c 'pgrep spotify_player'",
+        "format-icons": {
+            "spotify_player": "",
+            "default": ""
+         }
+    },
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false,
+        "interval": "once"
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{icon} {windows}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github"
+            "class<firefox> title<.*twitch|youtube.*>": "",
+            "class<brave>": "",
+            "class<brave> title<.*github.*>": "",
+            "class<brave> title<.*twitch|youtube.*>": "",
+            "class<Alacritty>": "",
+            "class<kitty>": "",
+            "class<org.kde.konsole>": "",
+            "class<proton mail>": "",
+            "class<steam>": "",
+            "class<discord>": "",
+            "class<vlc>": "",
+            "class<thunar>": "",
+            "class<org.gnome.Nautilus>": "",
+            "class<org.kde.dolphin>": "",
+            "class<org.kde.kate>": "",
+            "class<libreoffice-draw>": "",
+            "class<libreoffice-writer>": "",
+            "class<libreoffice-calc>": "",
+            "class<libreoffice-impress>": ""
+        }
+    },
+    "hyprland/submap": {
+        "format": " <span style=\"italic\"> Mode: {}</span>"
+    },
+    "hyprland/window":{
+        "icon": true,
+        "format": "{class}  |  {title}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": " {:%H:%M  |   %Y/%m/%d}",
+        "tooltip-format": "{:%a %b %d}\n\n{calendar}",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ff6699'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+                "today": "<span color='#ffcc66'><b>{}</b></span>"
+            }
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "kitty btop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "kitty btop"
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-double-click": "pavucontrol",
+        "on-click": "pulseaudio/slider"
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "bash $HOME/.config/hypr/scripts/setWallpaperSWWW.sh",
+        "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        },
+        "on-click-right": "hyprlock"
+    },
+    "custom/exit": {
+       "format": "",
+       "on-click": "wlogout -L 800px -R 800px -T 500px -B 500px",
+       "tooltip": false
+    }
+}

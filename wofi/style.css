@@ -1,0 +1,72 @@
+* {
+    border-radius: 1em;
+    border-width: 0;
+}
+
+#outer-box {
+}
+
+window {
+    font-size: 15px;
+    font-family: "Roboto Medium";
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 1em;
+    border-width: 1px;
+    border-color: linear-gradient(45deg, #fd5839 0%, #ffc572 60%);
+    background-image: url("/home/quentin/.local/share/wallpapers/curr_wallpaper");
+    background-size: 1000px;
+}
+
+#entry{
+    margin: 5px 5px;
+    color: grey;
+    padding-left: 30px;
+}
+
+#entry:selected {
+    /* background-color: rgba(187,204,221,0.5); */
+    background: linear-gradient(45deg, #fd5839 0%, #ffc572 60%);
+    margin: 5px 5px;
+    border-radius: 10px;
+}
+
+#expander-box {
+    background: transparent;
+    color: #333333;
+}
+
+#text:selected {
+    color: #111111;
+}
+
+#input{
+    background-color: rgba(0,0,0,0.6);
+    font-size: 20px;
+    font-weight: 500;
+    color: grey;
+    padding: 0.5em;
+    margin: 2em;
+    box-shadow: none; 
+    border: none;
+}
+
+#input:focus{
+    color: #aaaaaa;
+}
+
+#img{
+    padding-right:10px;
+}
+
+#outer-box{
+    box-shadow: none;
+    border-radius: 1em;
+    border-color: linear-gradient(45deg, #fd5839 0%, #ffc572 60%);
+    border-width: 1px;
+    transition: 0.5s ease-in-out;
+}
+
+#inner-box{
+    border-radius: 0 0 1em 1em;
+    background-color: rgba(0,0,0,0.7777777);
+}

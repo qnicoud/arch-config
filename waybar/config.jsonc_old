@@ -1,0 +1,132 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+    "output": "DP-2",
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/spotify", "pulseaudio", "network", "group/hardware", "tray", "clock", "group/misc"],
+    "group/hardware":{
+        "orientation": "horizontal",
+        "modules": ["cpu", "custom/separator", "memory"] 
+    },
+    "group/misc":{
+        "orientation": "horizontal",
+        "modules": ["custom/wallpaper", "custom/separator", "idle_inhibitor", "custom/separator", "custom/exit"] 
+    },
+    "custom/spotify": {
+        "format": "  {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop  
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "signal": 5
+        //"exec-if": "pgrep spotify"
+    },
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false,
+        "interval": "once"
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{icon} {windows}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github"
+            "class<firefox> title<.*twitch|youtube.*>": "",
+            "class<brave>": "",
+            "class<brave> title<.*github.*>": "",
+            "class<brave> title<.*twitch|youtube.*>": "",
+            "class<Alacritty>": "",
+            "class<kitty>": "",
+            "class<org.kde.konsole>": "",
+            "class<proton mail>": "",
+            "class<steam>": "",
+            "class<vlc>": "",
+            "class<thunar>": "",
+            "class<org.gnome.Nautilus>": "",
+            "class<org.kde.dolphin>": "",
+            "class<org.kde.kate>": "",
+            "class<libreoffice-draw>": "",
+            "class<libreoffice-writer>": "",
+            "class<libreoffice-calc>": "",
+            "class<libreoffice-impress>": ""
+        }
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/window":{
+        "icon": true,
+        "format": "{class} -> {title}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "{:%a %b %d}\n{calendar}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "kitty btop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "kitty btop"
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "bash $HOME/.config/hypr/scripts/setWallpaperSWWW.sh"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        },
+        "on-click-right": "hyprlock"
+    },
+    "custom/exit": {
+       "format": "",
+       "on-click": "wlogout",
+       "tooltip": false
+    }
+}

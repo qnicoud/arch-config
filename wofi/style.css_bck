@@ -1,0 +1,31 @@
+* {
+    border-radius: 1em;
+    border-width: 0;
+}
+
+window {
+    font-size: 18;
+    font-family: "Ubuntu Mono Nerd Font";
+    background-color: rgba(50,50,50, 0.9);
+    color: white;
+}
+
+#entry {
+    padding: 0.25em;
+   margin: 0.25em;
+
+}
+
+#entry:selected {
+    background-color: rgba(200, 200, 200, 0.9);
+}
+
+#text:selected {
+    color: #333333;
+}
+
+#input {
+    background-color: rgba(50,50,50, 0.9);    
+    color: white;
+    padding: 0.25em;
+}
