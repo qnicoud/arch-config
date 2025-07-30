@@ -18,15 +18,16 @@ echo "Authent polkit related"
 sudo pacman -Sy hyprpolkitagent 
 
 echo "Dev related packages"
-sudo pacman -Sy docker kubectl k9s bash-completion helm
-echo "yay -Sy lazydocker conda rpi-imager"
+sudo pacman -Sy docker kubectl k9s bash-completion helm arduino-ide
+echo "yay -Sy lazydocker rpi-imager thonny"
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
 echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
 
-# Lutris Gaming
+echo "Lutris Gaming"
 sudo pacman -Sy dotnet-runtime directx-headers lutris 
 echo "yay -S wine-stable"
 
-# Steam +  Gaming
+echo "Steam +  Gaming"
 echo "Pour isntaller steam décomenter la section multilib du fichier /etc/pacman.conf puis : pacman -Syu ; pacman -S steam"
 echo "yay -S minecraft-launcher gnome-keyring"
 
