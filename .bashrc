@@ -70,6 +70,7 @@ alias hyprland="hyprland > hyprland.logs 2>&1 &"
 alias ls="ls --color=auto --hyperlink=auto"
 alias grep="grep --color=auto"
 alias v="vim"
+alias nv="nvim"
 alias hyprconf="vim /home/quentin/.config/hypr/hyprland.conf"
 alias freecad="QT_QPA_PLATFORM=xcb freecad 2&>1 >/dev/null &"
 alias openrgb="QT_QPA_PLATFORM=xcb openrgb &"
@@ -77,7 +78,7 @@ alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 alias brcs="source /home/quentin/.bashrc 'quiet'"
 alias brce="vim /home/quentin/.bashrc"
 alias brc="brce && brcs"
-
+alias hypr="vim ~/.config/hypr/hyprland.conf"
 
 function kk { 
     nb=$1 
@@ -104,9 +105,40 @@ function kk {
     echo -e "\n   ${BLUE}${tot} ${terms} should have popped. :)${RESTORE}"
 }
 
+function exec_proc {
+    if [ ! -f ${PWD}/.script ] ; then
+        return 0
+    fi
+
+    proc="$(cat ${PWD}/.script)"
+    if [ ! -f $proc ] ; then
+        echo -e "\t${LYELLOW}/!\\ WARNING: Script file $proc does not seem to exits /!\\${RESTORE}"
+        return 1
+    elif $(ls $PWD | grep -q $proc) ; then 
+        proc="./${proc}"
+    fi
+
+    perm=$(stat -c %a $PWD/.script)
+    owner=$(stat -c %U $PWD/.script)
+    if [ $perm != 700 ] || [ $owner != $(whoami) ] ; then
+        echo -e "\t${LYELLOW}/!\\ WARNING: Will not execute proc $(cat ${PWD}/.script), .script file permissions or owner are dubious /!\\ ${RESTORE}"
+        return 1
+    fi
+
+    proc_owner=$(stat -c %U $proc)
+    if [ ! -x $proc ] || [ $proc_owner != $(whoami) ] ; then
+        echo -e "\t${LYELLOW}/!\\ WARNING: Will not execute proc $(cat ${PWD}/.script), wrong permissions or owner /!\\ ${RESTORE}"
+        return 1
+    fi
+    
+    $proc
+    
+}
+
 function cd { 
     builtin cd "$@" && 
-    load_conda_env
+    load_conda_env &&
+    exec_proc
 }
 
 function cdp {

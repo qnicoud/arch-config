@@ -20,7 +20,7 @@ create-menu-entries() {
     # shellcheck disable=SC2016
     local menu=(
         # Entry              Icon Operation
-        '("Play"             ""  "steam steam://rungameid/$appid")'
+        '("Play"             ""  "steam steam://rungameid/$appid -silent")'
         '("Open in library"  ""  "steam steam://nav/games/details/$appid")'
         '("Achievements"     ""  "steam steam://url/SteamIDAchievementsPage/$appid")'
         '("News"             ""  "steam steam://appnews/$appid")'

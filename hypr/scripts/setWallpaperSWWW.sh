@@ -23,5 +23,6 @@ CURR_SELECTION="${WALLPAPERS[$RANDOM % ${#WALLPAPERS[@]}]}"
 cp "${CURR_SELECTION}" "${CURR_WALLPAPER_NAME}"
 
 swww img    -o "DP-2" "${CURR_WALLPAPER_NAME}" -t any --transition-duration 2
-swww clear  -o "DP-1" 111111
+swww img    -o "DP-1" "${CURR_WALLPAPER_NAME}" -t any --transition-duration 2
+#swww clear  -o "DP-1" 111111
 
