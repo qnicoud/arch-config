@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installer yay"
-sudo pacman -Sy vim git firefox dolphin kitty polkit \
+sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     usbutils pavucontrol pulseaudio nvidia nvidia-utils \
     nerd-fonts sww wofi mlocate loupe discord sddm rhythmbox \
     bluez bluez-utils gnome-bluetooth-3.0a ttf-font-awesome otf-font-awesome \
