@@ -71,14 +71,14 @@ alias ls="ls --color=auto --hyperlink=auto"
 alias grep="grep --color=auto"
 alias v="vim"
 alias nv="nvim"
-alias hyprconf="vim /home/quentin/.config/hypr/hyprland.conf"
+alias hyprconf="nv /home/quentin/.config/hypr/hyprland.conf"
 alias freecad="QT_QPA_PLATFORM=xcb freecad 2&>1 >/dev/null &"
 alias openrgb="QT_QPA_PLATFORM=xcb openrgb &"
 alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 alias brcs="source /home/quentin/.bashrc 'quiet'"
-alias brce="vim /home/quentin/.bashrc"
+alias brce="nv /home/quentin/.bashrc"
 alias brc="brce && brcs"
-alias hypr="vim ~/.config/hypr/hyprland.conf"
+alias hypr="nv ~/.config/hypr/hyprland.conf"
 
 function kk { 
     nb=$1 
@@ -312,7 +312,7 @@ function thingy {
 
 #======================================================================================================
 # Configuration of kubernetes functionalities
-export KUBE_EDITOR="vim"
+export KUBE_EDITOR="nvim"
 source /usr/share/bash-completion/bash_completion
 source <(kubectl completion bash)
 alias k=kubectl
