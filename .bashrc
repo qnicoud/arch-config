@@ -189,6 +189,7 @@ function gitchk {
 }
 #export -f gitchk
 if [ "$1" != "quiet" ] ; then
+    fastfetch
     gitchk
 fi
 

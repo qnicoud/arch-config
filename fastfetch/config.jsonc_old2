@@ -1,0 +1,133 @@
+{
+"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+"logo": {
+"padding": {
+"top": 3,
+"left": 1
+},
+"color": {
+"1": "blue",
+"2": "red"
+}
+},
+"display": {
+"color": {
+"title": "cyan"
+},
+"hideCursor": false,
+"separator": "   "
+},
+"modules": [
+"title",
+"separator",
+{
+"type": "host",
+"keyColor": "blue",
+"key": " PC"
+},
+{
+"type": "board",
+"keyColor": "blue",
+"key": "  ├"
+},
+{
+"type": "CPU",
+"keyColor": "blue",
+"key": "  ├"
+},
+{
+"type": "gpu",
+"keyColor": "blue",
+"detectionMethod": "vulkan",
+"key": "  ├﬙"
+},
+{
+"type": "display",
+"keyColor": "blue",
+"key": "  ├"
+},
+{
+"type": "memory",
+"keyColor": "blue",
+"key": "  ╰"
+},
+"break",
+{
+"type": "os",
+"keyColor": "red",
+"key": " OS"
+},
+{
+"type": "kernel",
+"keyColor": "red",
+"key": "  ├"
+},
+{
+"type": "lm",
+"keyColor": "red",
+"key": "  ├󰍂"
+},
+{
+"type": "shell",
+"keyColor": "red",
+"key": "  ├"
+},
+{
+"type": "terminal",
+"keyColor": "red",
+"key": "  ├"
+},
+{
+"type": "TerminalFont",
+"keyColor": "red",
+"key": "  ├"
+},
+{
+"type": "Packages",
+"keyColor": "red",
+"key": "  ╰"
+},
+"break",
+{
+"type": "DE",
+"keyColor": "yellow",
+"key": " DE"
+},
+{
+"type": "WM",
+"keyColor": "yellow",
+"key": "  ├"
+},
+{
+"type": "WMTheme",
+"keyColor": "yellow",
+"key": "  ├"
+},
+{
+"type": "Theme",
+"keyColor": "yellow",
+"key": "  ├"
+},
+{
+"type": "Icons",
+"keyColor": "yellow",
+"key": "  ├"
+},
+{
+"type": "Font",
+"keyColor": "yellow",
+"key": "  ├"
+},
+{
+"type": "Cursor",
+"keyColor": "yellow",
+"key": "  ╰󰇀"
+},
+"break",
+{
+"type": "colors",
+"paddingLeft": 3,
+"symbol": "diamond"
+}
+]
+}

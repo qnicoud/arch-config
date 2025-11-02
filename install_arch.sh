@@ -7,7 +7,7 @@ sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     bluez bluez-utils gnome-bluetooth-3.0a ttf-font-awesome otf-font-awesome \
     unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full libvirt  virt-manager \
     dnsmasq dmidecode dart-sass dart-sass gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
-    perl-image-exiftool pdftk xdg-utils ripgrep fd emacs
+    perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch 
 echo "yay -S vim-plug proton-mail spotify-player-full virtio-win superfile" 
 
 echo "Hyprland & related tools"
