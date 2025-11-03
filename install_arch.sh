@@ -23,12 +23,16 @@ echo "yay -Sy lazydocker rpi-imager thonny"
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
 echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
 
+echo "Nvidia graphics card utilities"
+sudp pacman -Sy nvidia nvidia-settings nvidia-utils lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia libvdpau libxnvctrl vulkan-icd-loader lib32-vulkan-icd-loader
+
 echo "Lutris Gaming"
 sudo pacman -Sy dotnet-runtime directx-headers lutris 
 echo "yay -S wine-stable"
 
 echo "Steam +  Gaming"
 echo "Pour isntaller steam décomenter la section multilib du fichier /etc/pacman.conf puis : pacman -Syu ; pacman -S steam"
+sudo pacman -Sy lib32-fontconfig
 echo "yay -S minecraft-launcher gnome-keyring"
 
 # Divers
