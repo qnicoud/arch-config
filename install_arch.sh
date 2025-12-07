@@ -18,7 +18,7 @@ echo "Authent polkit related"
 sudo pacman -Sy hyprpolkitagent 
 
 echo "Dev related packages"
-sudo pacman -Sy docker kubectl k9s bash-completion helm arduino-ide jq
+sudo pacman -Sy docker kubectl k9s bash-completion helm arduino-ide jq postgresql
 echo "yay -Sy lazydocker rpi-imager thonny"
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
 echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
