@@ -43,7 +43,7 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 function load_conda_env {
     if [ -f $PWD/.conda_config ]; then
         export CONDACONFIGDIR=$PWD
-        if [ -f ./.conda_config ] && ! conda env list | grep $(cat ./.conda_config) ; then 
+        if [ -f ./.conda_config ] && ! conda env list | grep -q $(cat ./.conda_config) ; then 
             conda create -yqn $(cat ./.conda_config)
         fi
         conda activate $(cat ./.conda_config)
@@ -79,6 +79,8 @@ alias brcs="source /home/quentin/.bashrc 'quiet'"
 alias brce="nv /home/quentin/.bashrc"
 alias brc="brce && brcs"
 alias hypr="nv ~/.config/hypr/hyprland.conf"
+alias home="cd && clear && fastfetch"
+alias models="cd ~/Archives/3D_models/ && ls"
 
 function kk { 
     nb=$1 
@@ -142,12 +144,26 @@ function cd {
 }
 
 function cdp {
-    echo -e "\n  ${GREEN}List of personnal gits:${RESTORE}"
     list_gits=($(ls -d ~/bin/git-repos-personal/*))
+
+    if [ ! -z $1 ] && [[ " ${list_gits[*]} " =~ "/${1} " ]] ; then
+        cd ~/bin/git-repos-personal/${1}
+        return
+    fi
+
+    echo -e "\n  ${GREEN}List of personnal gits:${RESTORE}"
     CNT=0
     for git_folder in ${list_gits[@]} ; do
         CNT=$((CNT+1))
-        echo -e "${ITALIC} \t${CNT} - $(basename $git_folder)${NOITALIC}"
+        if grep -q "${git_folder}" ~/.gitchk 2> /dev/null ; then
+            PREFIX="${RED}"
+            SUFFIX=" (changes to stage/commit/push)${RESTORE}"
+        else
+            PREFIX=""
+            SUFFIX=""
+        fi
+        echo -e "${ITALIC}${PREFIX} \t${CNT} - $(basename $git_folder)${SUFFIX}${NOITALIC}"
+
     done
 
     answer=""
@@ -172,6 +188,7 @@ function cdp {
 
 function gitchk {
 	CURR_DIR=$(pwd)
+    rm ~/.gitchk
 	echo
 	echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
 	FOUND="FALSE"
@@ -179,7 +196,7 @@ function gitchk {
 		builtin cd ${repo}/../
 		if git remote -v | grep -q qnicoud ; then
 			#[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
-            [ ! -z "$(git status --porcelain)" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' && FOUND="TRUE" 
+            [ ! -z "$(git status --porcelain)" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' && FOUND="TRUE" && echo $(dirname $repo) > ~/.gitchk
 		fi
 	done
 	if [ $FOUND == "FALSE" ] ; then
