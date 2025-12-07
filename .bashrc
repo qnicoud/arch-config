@@ -150,7 +150,7 @@ function cdp {
         cd ~/bin/git-repos-personal/${1}
         return
     fi
-
+    
     echo -e "\n  ${GREEN}List of personnal gits:${RESTORE}"
     CNT=0
     for git_folder in ${list_gits[@]} ; do
@@ -187,19 +187,28 @@ function cdp {
 }
 
 function gitchk {
+    
+    if [ ! -z $1 ] && [[ $1 == "QUIET" ]]; then
+        VERBOSE="False"
+    else
+        VERBOSE="True"
+    fi
+    
 	CURR_DIR=$(pwd)
-    rm ~/.gitchk
-	echo
-	echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
+    rm ~/.gitchk 2> /dev/null
+	[ $VERBOSE == "True" ] && echo
+	[ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
 	FOUND="FALSE"
 	for repo in $(find ~ -type d -name ".git" 2>/dev/null) ; do
 		builtin cd ${repo}/../
-		if git remote -v | grep -q qnicoud ; then
+		if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
 			#[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
-            [ ! -z "$(git status --porcelain)" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' && FOUND="TRUE" && echo $(dirname $repo) > ~/.gitchk
+            [ $VERBOSE == "True" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' 
+            FOUND="TRUE" 
+            echo $(dirname $repo) > ~/.gitchk
 		fi
 	done
-	if [ $FOUND == "FALSE" ] ; then
+	if [ $FOUND == "FALSE" ] && [ $VERBOSE == "True" ] ; then
   		echo -e "\t- Everything is clean!"
 	fi
 	cd $CURR_DIR
