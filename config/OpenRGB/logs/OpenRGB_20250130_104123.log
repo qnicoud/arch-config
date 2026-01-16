@@ -1,0 +1,154 @@
+    OpenRGB v0.9
+    Commit:  from 
+    Launched: 20250130_104123
+====================================================================================================
+
+0     |Info:    Found file: default.orp attempting to validate header
+0     |Info:    Valid v4 profile found for default
+1003  |Info:    ------------------------------------------------------
+1003  |Info:    |               Start device detection               |
+1003  |Info:    ------------------------------------------------------
+1004  |Info:    Initializing HID interfaces: Success
+1024  |Info:    ------------------------------------------------------
+1024  |Info:    |             Detecting I2C interfaces               |
+1024  |Info:    ------------------------------------------------------
+1025  |Info:    Registering I2C interface: /dev/i2c-3 Device 0000:0000 Subsystem: 0000:0000
+1025  |Info:    Registering I2C interface: /dev/i2c-1 Device 0000:0000 Subsystem: 0000:0000
+1025  |Info:    Registering I2C interface: /dev/i2c-8 Device 10DE:2487 Subsystem: 1458:4073
+1025  |Info:    Registering I2C interface: /dev/i2c-6 Device 10DE:2487 Subsystem: 1458:4073
+1025  |Info:    Registering I2C interface: /dev/i2c-4 Device 10DE:2487 Subsystem: 1458:4073
+1025  |Info:    Registering I2C interface: /dev/i2c-2 Device 0000:0000 Subsystem: 0000:0000
+1025  |Info:    Registering I2C interface: /dev/i2c-0 Device 8086:7A23 Subsystem: 1043:8882
+1025  |Info:    Registering I2C interface: /dev/i2c-7 Device 10DE:2487 Subsystem: 1458:4073
+1025  |Info:    Registering I2C interface: /dev/i2c-5 Device 10DE:2487 Subsystem: 1458:4073
+1026  |Info:    Registering I2C interface: /dev/i2c-MSFT8000:00 Device 0000:0000 Subsystem: 0000:0000
+1026  |Info:    ------------------------------------------------------
+1026  |Info:    |               Detecting I2C devices                |
+1026  |Info:    ------------------------------------------------------
+11594 |Info:    ------------------------------------------------------
+11594 |Info:    |               Detecting I2C PCI devices            |
+11594 |Info:    ------------------------------------------------------
+11666 |Info:    [Gigabyte RTX3060 Vision OC 12G v3.0] Registering RGB controller
+11709 |Info:    ------------------------------------------------------
+11709 |Info:    |               Detecting HID devices                |
+11709 |Info:    ------------------------------------------------------
+11788 |Info:    [ASUS PRIME Z790-P] Registering RGB controller
+11844 |Info:    [Logitech G915 Wireless RGB Mechanical Gaming Keyboard] Registering RGB controller
+11844 |Info:    [Logitech G933 Lightsync Headset] Registering RGB controller
+12232 |Info:    [G502 HERO Gaming Mouse] Registering RGB controller
+12232 |Info:    ------------------------------------------------------
+12232 |Info:    |            Detecting libusb HID devices            |
+12232 |Info:    ------------------------------------------------------
+12260 |Info:    ------------------------------------------------------
+12260 |Info:    |              Detecting other devices               |
+12260 |Info:    ------------------------------------------------------
+12275 |Info:    ------------------------------------------------------
+12275 |Info:    |                Detection completed                 |
+12275 |Info:    ------------------------------------------------------
+12275 |Dialog:  <h2>WARNING:</h2><p>One or more I2C/SMBus interfaces failed to initialize.</p><p>RGB DRAM modules and some motherboards' onboard RGB lighting will not be available without I2C/SMBus.</p><p>On Linux, this is usually because the i2c-dev module is not loaded.  You must load the i2c-dev module along with the correct i2c driver for your motherboard.  This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p>
+12276 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+12276 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+12276 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+12276 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+12276 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+37254 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+37255 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+37255 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+37255 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+37255 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+69457 |Info:    Found file: default.orp attempting to validate header
+69458 |Info:    Valid v4 profile found for default
+71576 |Info:    Found file: default.orp attempting to validate header
+71576 |Info:    Valid v4 profile found for default
+71710 |Info:    Found file: default.orp attempting to validate header
+71710 |Info:    Valid v4 profile found for default
+71826 |Info:    Found file: default.orp attempting to validate header
+71826 |Info:    Valid v4 profile found for default
+72015 |Info:    Found file: default.orp attempting to validate header
+72015 |Info:    Valid v4 profile found for default
+72227 |Info:    Found file: default.orp attempting to validate header
+72228 |Info:    Valid v4 profile found for default
+85829 |Info:    Found file: default.orp attempting to validate header
+85829 |Info:    Valid v4 profile found for default
+86279 |Info:    Found file: default.orp attempting to validate header
+86279 |Info:    Valid v4 profile found for default
+86460 |Info:    Found file: default.orp attempting to validate header
+86460 |Info:    Valid v4 profile found for default
+89317 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+89317 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+89317 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+89317 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+89317 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+91390 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+91390 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+91390 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+91390 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+91390 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+91563 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+91563 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+91563 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+91563 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+91563 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+91740 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+91740 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+91740 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+91740 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+91740 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+92010 |Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+92010 |Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+92010 |Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+92010 |Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+92010 |Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+230062|Info:    Found file: default.orp attempting to validate header
+230062|Info:    Valid v4 profile found for default
+230240|Info:    Found file: default.orp attempting to validate header
+230240|Info:    Valid v4 profile found for default
+230392|Info:    Found file: default.orp attempting to validate header
+230392|Info:    Valid v4 profile found for default
+231446|Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+231446|Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+231446|Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+231446|Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+231446|Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+232571|Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+232571|Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+232571|Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+232571|Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+232571|Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+234803|Info:    Found file: default.orp attempting to validate header
+234803|Info:    Valid v4 profile found for default
+234958|Info:    Found file: default.orp attempting to validate header
+234958|Info:    Valid v4 profile found for default
+242809|Info:    Found file: default.orp attempting to validate header
+242809|Info:    Valid v4 profile found for default
+242809|Info:    Found file: white_fusion.orp attempting to validate header
+242809|Info:    Valid v4 profile found for white_fusion
+245968|Info:    Found file: default.orp attempting to validate header
+245968|Info:    Valid v4 profile found for default
+245968|Info:    Found file: white_fusion.orp attempting to validate header
+245968|Info:    Valid v4 profile found for white_fusion
+835088|Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+835088|Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+835088|Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+835088|Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+835088|Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255
+875039|Info:    Found file: default.orp attempting to validate header
+875039|Info:    Valid v4 profile found for default
+875039|Info:    Found file: white_fusion.orp attempting to validate header
+875039|Info:    Valid v4 profile found for white_fusion
+877144|Info:    Profile loading: Succeeded for Gigabyte RTX3060 Vision OC 12G v3.0 @ I2C: /dev/i2c-4, address 0x63
+877144|Info:    Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+877144|Info:    Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+877144|Info:    Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw6
+877144|Info:    Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw8 (Receiver) 
+Wireless Index: 255

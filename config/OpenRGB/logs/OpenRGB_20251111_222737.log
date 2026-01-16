@@ -1,0 +1,59 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20251111_222737
+====================================================================================================
+
+1     |Info:    [ProfileManager] Found file: default.orp attempting to validate header
+3     |Info:    [ProfileManager] Valid v5 profile found for default
+3     |Info:    [ProfileManager] Found file: white_fusion.orp attempting to validate header
+3     |Info:    [ProfileManager] Valid v5 profile found for white_fusion
+66    |Info:    [ResourceManager] Initializing HID interfaces: Success
+66    |Info:    ------------------------------------------------------
+66    |Info:    |               Start device detection               |
+66    |Info:    ------------------------------------------------------
+72    |Info:    ------------------------------------------------------
+72    |Info:    |             Detecting I2C interfaces               |
+72    |Info:    ------------------------------------------------------
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 10DE:2487 Subsystem: 1458:4073
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 10DE:2487 Subsystem: 1458:4073
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 10DE:2487 Subsystem: 1458:4073
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 8086:7A23 Subsystem: 1043:8882
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 10DE:2487 Subsystem: 1458:4073
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 10DE:2487 Subsystem: 1458:4073
+72    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-MSFT8000:00 Device 0000:0000 Subsystem: 0000:0000
+72    |Info:    ------------------------------------------------------
+72    |Info:    |               Detecting I2C devices                |
+72    |Info:    ------------------------------------------------------
+6559  |Info:    ------------------------------------------------------
+6559  |Info:    |            Detecting I2C DIMM modules              |
+6559  |Info:    ------------------------------------------------------
+6567  |Info:    [ResourceManager] Detected occupied slot 2, bus 6, type Key: X
+6568  |Info:    [ResourceManager] Detected occupied slot 4, bus 6, type Key: X
+6568  |Info:    ------------------------------------------------------
+6568  |Info:    |               Detecting I2C PCI devices            |
+6568  |Info:    ------------------------------------------------------
+6774  |Info:    [Gigabyte GeForce RTX 3060 Vision OC V3] Registering RGB controller
+6816  |Info:    ------------------------------------------------------
+6816  |Info:    |               Detecting HID devices                |
+6816  |Info:    ------------------------------------------------------
+6869  |Info:    [Logitech G915 Wireless RGB Mechanical Gaming Keyboard] Registering RGB controller
+6869  |Info:    [Logitech G933 Lightsync Headset] Registering RGB controller
+6951  |Info:    [ASUS PRIME Z790-P] Registering RGB controller
+6952  |Info:    ------------------------------------------------------
+6952  |Info:    |            Detecting libusb HID devices            |
+6952  |Info:    ------------------------------------------------------
+6978  |Info:    ------------------------------------------------------
+6978  |Info:    |              Detecting other devices               |
+6978  |Info:    ------------------------------------------------------
+6996  |Info:    [ResourceManager] Calling Post-detection callbacks
+6996  |Info:    ------------------------------------------------------
+6996  |Info:    |                Detection completed                 |
+6996  |Info:    ------------------------------------------------------
+6996  |Dialog:  <h2>Some internal devices may not be detected:</h2><p>One or more I2C or SMBus interfaces failed to initialize.</p><p><b>RGB DRAM modules, some motherboards' onboard RGB lighting, and RGB Graphics Cards, will not be available in OpenRGB</b> without I2C or SMBus.</p><h4>How to fix this:</h4><p>On Linux, this is usually because the i2c-dev module is not loaded.</p><p>You must load the i2c-dev module along with the correct i2c driver for your motherboard. This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p><h3>If you are not using internal RGB on a desktop this message is not important to you.</h3>
+6996  |Info:    [ProfileManager] Profile loading: FAILED! for Gigabyte GeForce RTX 3060 Vision OC V3 @ I2C: /dev/i2c-4, address 0x63
+6996  |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+6996  |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw4
+6996  |Info:    [ProfileManager] Profile loading: Succeeded for ASUS PRIME Z790-P @ HID: /dev/hidraw0

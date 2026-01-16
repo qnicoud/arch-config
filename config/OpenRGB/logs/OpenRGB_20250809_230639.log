@@ -1,0 +1,76 @@
+    OpenRGB v0.9+ (1.0rc1)
+    Commit:  from 
+    Launched: 20250809_230639
+====================================================================================================
+
+0     |Info:    [ProfileManager] Found file: default.orp attempting to validate header
+0     |Info:    [ProfileManager] Valid v4 profile found for default
+0     |Info:    [ProfileManager] Found file: white_fusion.orp attempting to validate header
+0     |Info:    [ProfileManager] Valid v4 profile found for white_fusion
+52    |Info:    [ResourceManager] Initializing HID interfaces: Success
+52    |Info:    ------------------------------------------------------
+52    |Info:    |               Start device detection               |
+52    |Info:    ------------------------------------------------------
+58    |Info:    ------------------------------------------------------
+58    |Info:    |             Detecting I2C interfaces               |
+58    |Info:    ------------------------------------------------------
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 0000:0000 Subsystem: 0000:0000
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 0000:0000 Subsystem: 0000:0000
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 10DE:2487 Subsystem: 1458:4073
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 10DE:2487 Subsystem: 1458:4073
+65    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 10DE:2487 Subsystem: 1458:4073
+66    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 0000:0000 Subsystem: 0000:0000
+66    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 8086:7A23 Subsystem: 1043:8882
+66    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 10DE:2487 Subsystem: 1458:4073
+66    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 10DE:2487 Subsystem: 1458:4073
+66    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-MSFT8000:00 Device 0000:0000 Subsystem: 0000:0000
+66    |Info:    ------------------------------------------------------
+66    |Info:    |               Detecting I2C devices                |
+66    |Info:    ------------------------------------------------------
+10595 |Info:    ------------------------------------------------------
+10595 |Info:    |            Detecting I2C DIMM modules              |
+10595 |Info:    ------------------------------------------------------
+11928 |Info:    ------------------------------------------------------
+11928 |Info:    |               Detecting I2C PCI devices            |
+11928 |Info:    ------------------------------------------------------
+11999 |Info:    [Gigabyte GeForce RTX 3060 Vision OC V3] Registering RGB controller
+12042 |Info:    ------------------------------------------------------
+12042 |Info:    |               Detecting HID devices                |
+12042 |Info:    ------------------------------------------------------
+12116 |Info:    [ASUS PRIME Z790-P] Registering RGB controller
+12168 |Info:    [Logitech G915 Wireless RGB Mechanical Gaming Keyboard] Registering RGB controller
+12220 |Info:    [Logitech G915 Wireless RGB Mechanical Gaming Keyboard (Wired)] Registering RGB controller
+12220 |Info:    [Logitech G933 Lightsync Headset] Registering RGB controller
+12608 |Info:    [G502 HERO Gaming Mouse] Registering RGB controller
+12608 |Info:    ------------------------------------------------------
+12608 |Info:    |            Detecting libusb HID devices            |
+12608 |Info:    ------------------------------------------------------
+12634 |Info:    ------------------------------------------------------
+12634 |Info:    |              Detecting other devices               |
+12634 |Info:    ------------------------------------------------------
+12658 |Info:    [ResourceManager] Calling Post-detection callbacks
+12658 |Info:    ------------------------------------------------------
+12658 |Info:    |                Detection completed                 |
+12658 |Info:    ------------------------------------------------------
+12658 |Dialog:  <h2>Some internal devices may not be detected:</h2><p>One or more I2C or SMBus interfaces failed to initialize.</p><p><b>RGB DRAM modules, some motherboards' onboard RGB lighting, and RGB Graphics Cards, will not be available in OpenRGB</b> without I2C or SMBus.</p><h4>How to fix this:</h4><p>On Linux, this is usually because the i2c-dev module is not loaded.</p><p>You must load the i2c-dev module along with the correct i2c driver for your motherboard. This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p><h3>If you are not using internal RGB on a desktop this message is not important to you.</h3>
+23982 |Info:    [ProfileManager] Profile loading: FAILED! for Gigabyte GeForce RTX 3060 Vision OC V3 @ I2C: /dev/i2c-4, address 0x63
+23982 |Info:    [ProfileManager] Profile loading: FAILED! for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+23982 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+23982 |Info:    [ProfileManager] Profile loading: FAILED! for Logitech G915 Wireless RGB Mechanical Gaming Keyboard (Wired) @ 
+23982 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw8
+23982 |Info:    [ProfileManager] Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw10 (Receiver) 
+Wireless Index: 255
+40001 |Info:    [ProfileManager] Profile loading: FAILED! for Gigabyte GeForce RTX 3060 Vision OC V3 @ I2C: /dev/i2c-4, address 0x63
+40001 |Info:    [ProfileManager] Profile loading: FAILED! for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+40001 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+40001 |Info:    [ProfileManager] Profile loading: FAILED! for Logitech G915 Wireless RGB Mechanical Gaming Keyboard (Wired) @ 
+40001 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw8
+40001 |Info:    [ProfileManager] Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw10 (Receiver) 
+Wireless Index: 255
+44021 |Info:    [ProfileManager] Profile loading: FAILED! for Gigabyte GeForce RTX 3060 Vision OC V3 @ I2C: /dev/i2c-4, address 0x63
+44021 |Info:    [ProfileManager] Profile loading: FAILED! for ASUS PRIME Z790-P @ HID: /dev/hidraw1
+44021 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G915 Wireless RGB Mechanical Gaming Keyboard @ 
+44021 |Info:    [ProfileManager] Profile loading: FAILED! for Logitech G915 Wireless RGB Mechanical Gaming Keyboard (Wired) @ 
+44021 |Info:    [ProfileManager] Profile loading: Succeeded for Logitech G933 Lightsync Headset @ HID: /dev/hidraw8
+44021 |Info:    [ProfileManager] Profile loading: Succeeded for G502 HERO Gaming Mouse @ HID: /dev/hidraw10 (Receiver) 
+Wireless Index: 255
