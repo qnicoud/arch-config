@@ -6,9 +6,9 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 declare -A rofi_command
 rofi_command=(
-    [drun]="rofi -show drun -theme grid"
-    [run]="rofi -show run -theme list"
-    [window]="rofi -show window -theme list"
+    [drun]="rofi -show drun -theme grid -config ~/.config/rofi/config_game_launcher.rasi"
+    [run]="rofi -show run -theme list -config ~/.config/rofi/config_game_launcher.rasi"
+    [window]="rofi -show window -theme list -config ~/.config/rofi/config_game_launcher.rasi"
     [options]="bash $SCRIPT_DIR/rofi-options-menu.sh"
     [games]="bash $SCRIPT_DIR/rofi-game-launcher/open.sh"
 )

@@ -1,4 +1,4 @@
-#======================================================================================================
+#~/.config/matugen/templates/hyprland-colors.conf'=====================================================================================================g
 # Setup color variables :
 RESTORE='\033[0m'
 
@@ -73,7 +73,7 @@ alias v="vim"
 alias nv="nvim"
 alias hyprconf="nv /home/quentin/.config/hypr/hyprland.conf"
 alias freecad="QT_QPA_PLATFORM=xcb freecad 2&>1 >/dev/null &"
-alias openrgb="QT_QPA_PLATFORM=xcb openrgb &"
+alias openrgb="QT_QPA_PLATFORM=xcb openrgb"
 alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 alias brcs="source /home/quentin/.bashrc 'quiet'"
 alias brce="nv /home/quentin/.bashrc"
