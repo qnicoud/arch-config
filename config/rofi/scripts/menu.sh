@@ -10,6 +10,8 @@ MENU=$(cat << 'EOF'
  Waybar Selector
  Screenshot
  Lock
+󰁫 Suspend
+󰒲 Hibernate
 󰐥 Shutdown
 EOF
 )
@@ -43,6 +45,12 @@ case "$choice" in
         ;;
     " Lock")
         hyprlock
+        ;;
+    "󰁫 Suspend")
+        systemctl suspend
+        ;;
+    "󰒲 Hibernate")
+        systemctl hibernate
         ;;
     "󰐥 Shutdown")
         shutdown now

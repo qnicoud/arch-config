@@ -61,7 +61,9 @@ load_conda_env
 
 #======================================================================================================
 # Define prompt
-omp_theme="multiverse-neon.omp.json"
+#omp_theme="multiverse-neon.omp.json"
+omp_theme="emodipt-extend.omp.json"
+#omp_theme="tokyonight_storm.omp.json"
 eval "$(~/.local/bin/oh-my-posh init bash --config ~/.local/bin/${omp_theme})"
 alias hyprland="hyprland > hyprland.logs 2>&1 &"
 
@@ -71,14 +73,13 @@ alias ls="ls --color=auto --hyperlink=auto"
 alias grep="grep --color=auto"
 alias v="vim"
 alias nv="nvim"
-alias hyprconf="nv /home/quentin/.config/hypr/hyprland.conf"
 alias freecad="QT_QPA_PLATFORM=xcb freecad 2&>1 >/dev/null &"
 alias openrgb="QT_QPA_PLATFORM=xcb openrgb"
 alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 alias brcs="source /home/quentin/.bashrc 'quiet'"
 alias brce="nv /home/quentin/.bashrc"
 alias brc="brce && brcs"
-alias hypr="nv ~/.config/hypr/hyprland.conf"
+alias hypr="cd ~/.config/hypr && nv hyprland.conf && cd -"
 alias home="cd && clear && fastfetch"
 alias models="cd ~/Archives/3D_models/ && ls"
 

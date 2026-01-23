@@ -10,7 +10,7 @@
         "setcustom": false,
         "setminimized": true,
         "setprofile": true,
-        "setserver": false,
+        "setserver": true,
         "setserverhost": false,
         "setserverport": false
     },
@@ -2154,7 +2154,8 @@
         "dialog_no_show_hashes": [
             14306703760882907409,
             1994918717196657649
-        ]
+        ],
+        "log_console": false
     },
     "UserInterface": {
         "RunZoneChecks": false,
@@ -2184,7 +2185,7 @@
             "x": 0,
             "y": 0
         },
-        "greyscale_tray_icon": false,
+        "greyscale_tray_icon": true,
         "language": "default",
         "minimize_on_close": true
     }

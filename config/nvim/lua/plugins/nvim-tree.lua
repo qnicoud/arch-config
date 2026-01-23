@@ -1,19 +1,42 @@
-return {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  config = function()
-    require("nvim-tree").setup({})
+-- auto close
+local function is_modified_buffer_open(buffers)
+    for _, v in pairs(buffers) do
+        if v.name:match("NvimTree_") == nil then
+            return true
+        end
+    end
+    return false
+end
 
-    -- On utilise <leader>e pour ouvrir/fermer l'explorateur
-    vim.keymap.set(
-      "n",
-      "<leader>e",
-      "<cmd>NvimTreeFindFileToggle<CR>",
-      { desc = "Ouverture/fermeture de l'explorateur de fichiers" }
-    )
-  end,
+vim.api.nvim_create_autocmd("BufEnter", {
+    nested = true,
+    callback = function()
+        if
+            #vim.api.nvim_list_wins() == 1
+            and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil
+            and is_modified_buffer_open(vim.fn.getbufinfo({ bufmodified = 1 })) == false
+        then
+            vim.cmd("quit")
+        end
+    end,
+})
+
+return {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+        require("nvim-tree").setup({})
+
+        -- On utilise <leader>e pour ouvrir/fermer l'explorateur
+        vim.keymap.set(
+            "n",
+            "<leader>e",
+            "<cmd>NvimTreeFindFileToggle<CR>",
+            { desc = "Ouverture/fermeture de l'explorateur de fichiers" }
+        )
+    end,
 }
