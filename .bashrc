@@ -213,6 +213,7 @@ function gitchk {
   		echo -e "\t- Everything is clean!"
 	fi
 	cd $CURR_DIR
+    echo
 }
 #export -f gitchk
 if [ "$1" != "quiet" ] ; then
