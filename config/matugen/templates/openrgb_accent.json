@@ -1,3 +1,8 @@
 {
-  "primary": "{{colors.primary.default.hex}}"
+  "accent_color": {
+    "red": "{{colors.primary.default.red}}",
+    "green": "{{colors.primary.default.green}}",
+    "blue": "{{colors.primary.default.blue}}",
+    "hue": "{{colors.primary.default.hue}}"
+  }
 }

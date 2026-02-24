@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.bashrc "quiet"
+
 # =========================
 # Paths
 # =========================
@@ -95,6 +97,9 @@ matugen image "$IMG_PATH"
 
 # Reload waybar CSS only
 pkill -USR2 waybar
+
+# Update openrgb colors
+python ~/.config/rofi/scripts/openrgb_setup.py
 
 # Close rofi cleanly
 pkill rofi

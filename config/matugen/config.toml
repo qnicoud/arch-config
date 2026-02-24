@@ -24,6 +24,11 @@ input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
+[templates.openrgb]
+input_path = '~/.config/matugen/templates/openrgb_accent.json'
+output_path = '~/.config/OpenRGB/colors.json'
+post_hook = 'python ~/.config/rofi/scripts/openrgb_setup.py'
+
 [templates.fastfetch]
 input_path = '~/.config/matugen/templates/fastfetch-config.jsonc'
 output_path = '~/.config/fastfetch/config.jsonc'
