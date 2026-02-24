@@ -344,6 +344,8 @@ export KUBE_EDITOR="nvim"
 source /usr/share/bash-completion/bash_completion
 source <(kubectl completion bash)
 alias k=kubectl
+alias kn=kubens
+alias kx=kubectx
 complete -o default -F __start_kubectl k
 alias manifests="cd /mnt/shared_drive_pi/manifests/"
 
