@@ -37,3 +37,5 @@ bg_color = RGBColor.fromHEX("#FDD4D4")
 gpu.set_color(accent_color)
 mobo.zones[1].set_color(bg_color)
 mobo.zones[2].set_color(accent_color)
+
+cli.save_profile("matugen")

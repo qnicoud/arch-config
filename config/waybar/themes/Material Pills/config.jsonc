@@ -93,6 +93,7 @@
 	    	"title<.*youtube.*>": " ",
 	    	"class<vlc>": "󰕼 ",
 	    	"title<.*cmus.*>": " ",
+            "title<.*kew.*>": " ",
 	    	"class<[Ss]potify>": " ",
 	    	"class<virt-macodeger>": " ",
 	    	"class<.virt-manager-wrapped>": " ",

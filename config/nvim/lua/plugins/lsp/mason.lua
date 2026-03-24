@@ -42,6 +42,7 @@ return {
                 "svelte",
                 "ts_ls",
                 "yamlls",
+                "ansiblels",
             },
         })
     end,

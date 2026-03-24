@@ -69,9 +69,9 @@ update-game-entries() {
             fi
 
             title=$(awk -F\" '/"name"/ {print $4}' "$manifest" | tr -d "™®")
-            boxart=$(find $STEAM_ROOT/appcache/librarycache/${appid}/ -name "library_600x900.jpg")
+            boxart=$(find $STEAM_ROOT/appcache/librarycache/${appid}/ -name "*library_600x900.jpg")
             if [ ! -f "$boxart" ]; then
-               boxart=$(find $STEAM_ROOT/appcache/librarycache/${appid}/ -name "library_capsule.jpg") 
+               boxart=$(find $STEAM_ROOT/appcache/librarycache/${appid}/ -name "*library_capsule.jpg") 
             fi
 
             # Search for custom boxart set through the Steam library
