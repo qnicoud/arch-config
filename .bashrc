@@ -81,7 +81,8 @@ alias brce="nv /home/quentin/.bashrc"
 alias brc="brce && brcs"
 alias hypr="cd ~/.config/hypr && nv hyprland.conf && cd -"
 alias home="cd && clear && fastfetch"
-alias models="cd ~/Archives/3D_models/ && ls"
+alias models="cd ~/Documents/3D_models/ && ls"
+eval "$(uv generate-shell-completion bash)"  # For bash
 
 function kk { 
     nb=$1 
@@ -206,7 +207,7 @@ function gitchk {
 			#[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
             [ $VERBOSE == "True" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' 
             FOUND="TRUE" 
-            echo $(dirname $repo) > ~/.gitchk
+            echo $(dirname $repo) >> ~/.gitchk
 		fi
 	done
 	if [ $FOUND == "FALSE" ] && [ $VERBOSE == "True" ] ; then
@@ -257,7 +258,7 @@ function cura {
 
 function thingy {
     echo
-    model_source="/home/quentin/Archives/3D_models/"
+    model_source="/home/quentin/Documents/3D_models/"
     if ! [ -f "$@" ] || ! unzip -qt "$@" >/dev/null 2>&1 ; then
         echo -e "\t${RED}/!\ ERROR: Provided parameter is not a file or not a zip.${RESTORE}" 
         return 1
