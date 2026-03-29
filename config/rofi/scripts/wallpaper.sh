@@ -60,7 +60,7 @@ RANDOM_POS="$(awk 'BEGIN {
 # =========================
 # Wallpaper change (SINGLE GROW)
 # =========================
-swww img "$IMG_PATH" \
+awww img "$IMG_PATH" \
     --transition-type grow \
     --transition-pos "$RANDOM_POS" \
     --transition-duration 2.8 \
