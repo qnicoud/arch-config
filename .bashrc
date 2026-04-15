@@ -63,6 +63,7 @@ load_conda_env
 # Define prompt
 #omp_theme="multiverse-neon.omp.json"
 omp_theme="emodipt-extend.omp.json"
+omp_theme="emodipt-extend_CUSTOM.omp.json"
 #omp_theme="tokyonight_storm.omp.json"
 eval "$(~/.local/bin/oh-my-posh init bash --config ~/.local/bin/${omp_theme})"
 alias hyprland="hyprland > hyprland.logs 2>&1 &"
@@ -83,6 +84,8 @@ alias hypr="cd ~/.config/hypr && nv hyprland.conf && cd -"
 alias home="cd && clear && fastfetch"
 alias models="cd ~/Documents/3D_models/ && ls"
 eval "$(uv generate-shell-completion bash)"  # For bash
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 function kk { 
     nb=$1 
