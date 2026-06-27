@@ -89,7 +89,7 @@ pkill hyprlock 2>/dev/null
 # =========================
 # Matugen
 # =========================
-matugen image "$IMG_PATH"
+matugen image "$IMG_PATH" --prefer 'saturation'
 
 # =========================
 # Safe reloads
