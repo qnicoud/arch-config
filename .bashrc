@@ -80,7 +80,7 @@ alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 alias brcs="source /home/quentin/.bashrc 'quiet'"
 alias brce="nv /home/quentin/.bashrc"
 alias brc="brce && brcs"
-alias hypr="cd ~/.config/hypr && nv hyprland.conf && cd -"
+alias hypr="cd ~/.config/hypr && nv hyprland.lua && cd -"
 alias home="cd && clear && fastfetch"
 alias models="cd ~/Documents/3D_models/ && ls"
 eval "$(uv generate-shell-completion bash)"  # For bash

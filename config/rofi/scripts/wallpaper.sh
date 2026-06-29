@@ -61,11 +61,15 @@ RANDOM_POS="$(awk 'BEGIN {
 # Wallpaper change (SINGLE GROW)
 # =========================
 awww img "$IMG_PATH" \
-    --transition-type grow \
-    --transition-pos "$RANDOM_POS" \
+    --resize crop \
+    --crop-gravity top \
+    --transition-type wipe \
     --transition-duration 2.8 \
-    --transition-fps 60
-
+    --transition-fps 60 \
+    --transition-angle 30
+#    --transition-pos "$RANDOM_POS" \
+#    --transition-type grow \
+#
 # =========================
 # Notify
 # =========================

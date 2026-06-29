@@ -29,7 +29,7 @@
 
     "hyprland/workspaces": {
 	    "persistent-workspaces": {"*": [ 1,2,3,4,5 ]},
-	    "on-click": "activate",
+	    //"on-click": "activate",
         "format": "{icon} {windows}",
         "format-icons": {
 		    "1": "一",

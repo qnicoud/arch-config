@@ -25,13 +25,16 @@ if not os.path.exists(openrgb_config_path):
 with open(os.path.expanduser(openrgb_config_path), "r") as json_file:
     openrgb_colors = json.load(json_file)
 
-accent_color = RGBColor.fromHSV(
-    int(float(openrgb_colors["accent_color"]["hue"])), 80, 90
-)
-print(
-    max(openrgb_colors["accent_color"], key=openrgb_colors["accent_color"].get),
-    openrgb_colors,
-)
+print(openrgb_colors["accent_color"]["hue"])
+newHue = int(float(openrgb_colors["accent_color"]["hue"])) - 25
+if newHue < 0 :
+    newHue = 360 - newHue
+
+accent_color = RGBColor.fromHSV(newHue, 100, 100)
+#accent_color = RGBColor.fromHEX(
+#    openrgb_colors["accent_color"]["hex"]
+#)
+
 bg_color = RGBColor.fromHEX("#FDD4D4")
 
 gpu.set_color(accent_color)

@@ -3,8 +3,8 @@
     "logo": {
         "source": "arch_small", // search for logos: fastfetch --list-logos or --print-logos
         "color": {             // Override logo colors
-            "1": "#95cdf7",
-            "2": "#95cdf7"
+            "1": "#eac16c",
+            "2": "#eac16c"
         },
         "padding": {
 	        "top": 1,
@@ -13,7 +13,7 @@
 	},
     "display": {
         "separator": "  ",
-        "color": "#95cdf7"
+        "color": "#eac16c"
     },
     "modules": [
 	"break",

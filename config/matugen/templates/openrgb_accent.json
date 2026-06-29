@@ -3,6 +3,7 @@
     "red": "{{colors.primary.default.red}}",
     "green": "{{colors.primary.default.green}}",
     "blue": "{{colors.primary.default.blue}}",
-    "hue": "{{colors.primary.default.hue}}"
+    "hue": "{{colors.primary.default.hue}}",
+    "hex": "{{colors.primary.default.hex | set_saturation: 100.0 | set_lightness: 50}}"
   }
 }
