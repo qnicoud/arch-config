@@ -199,25 +199,42 @@ function gitchk {
         VERBOSE="True"
     fi
     
-	CURR_DIR=$(pwd)
-    rm ~/.gitchk 2> /dev/null
 	[ $VERBOSE == "True" ] && echo
-	[ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
-	FOUND="FALSE"
-	for repo in $(find ~ -type d -name ".git" 2>/dev/null) ; do
-		builtin cd ${repo}/../
-		if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
-			#[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
-            [ $VERBOSE == "True" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $(dirname $repo))'\e]8;;\e\\\n' 
-            FOUND="TRUE" 
-            echo $(dirname $repo) >> ~/.gitchk
-		fi
-	done
-	if [ $FOUND == "FALSE" ] && [ $VERBOSE == "True" ] ; then
+
+    if [ -f ~/.gitchk.ongoing ] ; then
+	    [ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo are already being checked. ${RESTORE}"
+        [ $VERBOSE == "True" ] && echo
+        return
+    elif [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +5 | grep -q .gitchk ; then 
+    	CURR_DIR=$(pwd)
+        rm ~/.gitchk 2> /dev/null
+        touch ~/.gitchk.ongoing ~/.gitchk
+	    FOUND="FALSE"
+	    for repo in $(find ~ -type d -name ".git" 2>/dev/null) ; do
+		    builtin cd ${repo}/../
+		    if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
+			    #[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
+                FOUND="TRUE" 
+                echo $(dirname $repo) >> ~/.gitchk
+		    fi
+	    done
+	    cd $CURR_DIR
+        rm ~/.gitchk.ongoing
+    elif [ -e ~/.gitchk ] && [ ! -s ~/.gitchk ]; then
+        FOUND="FALSE"
+    elif [ -e ~/.gitchk ] && [ -s ~/.gitchk ]; then
+        FOUND="TRUE"
+    fi
+
+	[ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
+    if [ $FOUND == "TRUE" ] ; then
+        for repo in $(cat ~/.gitchk) ; do
+            [ $VERBOSE == "True" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $repo)'\e]8;;\e\\\n' 
+        done
+	elif [ $FOUND == "FALSE" ] && [ $VERBOSE == "True" ] ; then
   		echo -e "\t- Everything is clean!"
 	fi
-	cd $CURR_DIR
-    echo
+    [ $VERBOSE == "True" ] && echo
 }
 #export -f gitchk
 if [ "$1" != "quiet" ] ; then
