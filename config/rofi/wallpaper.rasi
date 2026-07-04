@@ -29,7 +29,8 @@ configuration {
 * {
   font: "UbuntuMono Nerd Font Propo 10";
 
-  accent: @blue;
+//  accent: @blue;
+  accent: @red;
   urgent: @yellow;
 
   background-color : transparent;
