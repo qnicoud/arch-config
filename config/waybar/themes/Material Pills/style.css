@@ -1,128 +1,167 @@
-@import 'colors.css';
+@import "colors.css";
 
 * {
-    border: none;
-    border-radius: 0px;
+  border: none;
+  border-radius: 0px;
 
-    font-family: "Adwaita Sans", "UbuntuMonoNerdFont";
-    font-weight: bold;
+  font-family: "Adwaita Sans", "UbuntuMonoNerdFont";
+  font-weight: bold;
 
-    min-height: 0;
-    padding: 0;
-    margin: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 window#waybar {
-    background: transparent;
+  background: transparent;
 }
 
 tooltip {
-    background: @bg0;
-    border: 1px solid @bg3;
-    border-radius: 12px;
+  background: @bg0;
+  border: 1px solid @bg3;
+  border-radius: 12px;
 }
 
-tooltip label{
-    color: @fg;
-    padding: 6px;
+tooltip label {
+  color: @fg;
+  padding: 6px;
 }
 
-#workspaces {
-    background-color: @bg0;
-    padding:5px 6px;
-    margin: 0 0 0 12px;
-    border-radius: 18px;
-    border: 1px solid @bg1;
-    color: @fg;
+#workspaces,
+#submap,
+.groups {
+  background-color: @bg0;
+  padding: 5px 6px;
+  margin: 0 0 0 12px;
+  border-radius: 18px;
+  border: 1px solid @bg1;
+  color: @fg;
 }
 
-#workspaces button { 
-    padding: 0px 10px;
-    margin: 0px 3px;
-    border-radius: 16px;
-    color: transparent;
-    background-color: @bg1;
-    transition: all 150ms ease-in-out;
+#workspaces button {
+  padding: 0px 10px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: transparent;
+  background-color: @bg1;
+  transition: all 150ms ease-in-out;
 }
 
-#workspaces button.active { 
-    background-color: @fg;
-    color: @bg0;
-    min-width: 30px;
-    transition: all 150ms ease-in-out;
+#workspaces button.active {
+  background-color: @fg;
+  color: @bg0;
+  min-width: 30px;
+  transition: all 150ms ease-in-out;
 }
 
 #workspaces button:hover {
-    background-color: @on_primary;
-    color: @bg0;
-    border-radius: 16px;
-    min-width: 30px;
-    background-size: 400% 400%;
+  background-color: @on_primary;
+  color: @bg0;
+  border-radius: 16px;
+  min-width: 30px;
+  background-size: 400% 400%;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
-    color: @bg0;
-    border-radius: 16px;
-    background-size: 400% 400%;
-    transition: all 150ms ease-in-out;
+  background-color: @red;
+  color: @bg0;
+  border-radius: 16px;
+  background-size: 400% 400%;
+  transition: all 150ms ease-in-out;
 }
 
 #clock,
-#custom-apps,
 #mpris,
 #tray,
-#pulseaudio,
-#custom-notification,    
-#network {
-    background-color: @bg0;
-    padding: 0 10px 0 10px;
-    margin: 0 0 0 10px;
-    border-radius: 50px;
-    border: 1px solid @bg1;
-    color: @fg;
+#custom-notification,
+#network,
+#bluetooth {
+  background-color: @bg0;
+  padding: 0 10px 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+  color: @fg;
 }
 
 #custom-screenrecording-indicator.active {
-    color: @red;
-    background-color: @bg0;
-    padding: 0 10px 0 10px;
-    margin: 0 0 0 10px;
-    border-radius: 50px;
-    border: 1px solid @bg1;
+  color: @red;
+  background-color: @bg0;
+  padding: 0 10px 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
 }
 
 #custom-screenrecording-indicator {
-    background-color: @bg0;
-    padding: 0 10px 0 10px;
-    margin: 0 0 0 10px;
-    border-radius: 50px;
-    border: 1px solid @bg1;
+  background-color: @bg0;
+  padding: 0 10px 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
 }
 
-#custom-apps {
-    color: @fg;
-} 
-
-#clock {
-    color: @fg;
+#custom-apps,
+#custom-arrow-left,
+#custom-arrow-right,
+#clock,
+#mpris,
+#pulseaudio,
+#network,
+#bluetooth {
+  color: @fg;
 }
 
-#mpris {
-    color: @fg;
-}
-
-#pulseaudio {
-    color: @fg;
-}
-
-#network {
-    color: @fg;
-    margin-right: 11px;
+#tray {
+  color: @fg;
+  margin-right: 11px;
 }
 
 #custom-notification {
-    color: @fg ;
+  color: @fg;
+}
+
+#custom-apps,
+#custom-arrow-left,
+#custom-arrow-right,
+#battery,
+#cpu,
+#memory,
+#load,
+#temperature,
+#pulseaudio,
+#pulseaudio-slider {
+  padding: 0px 10px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  border: 1px solid @bg1;
+  color: @fg;
+  background-color: @bg1;
+}
+
+#custom-apps,
+#custom-arrow-left,
+#custom-arrow-right {
+  background-color: unset;
+  border-width: 0;
+}
+
+slider {
+  opacity: 0;
+  box-shadow: none;
+}
+
+trough {
+  min-width: 50px;
+  min-height: 5px;
+  border-radius: 8px;
+  background: @inactive;
+}
+
+trough highlight {
+  border-radius: 8px;
+  background-color: @fg;
+  background-image: none; /* Some gtk themes set an svg for background. */
 }
 
 /* ===== Compatibility aliases for custom style.css ===== */
@@ -132,5 +171,5 @@ tooltip label{
 @define-color bg3 @surface_variant;
 @define-color bg4 @surface_container_high;
 
-@define-color fg @primary ;
+@define-color fg @primary;
 @define-color red @error;

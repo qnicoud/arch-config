@@ -34,7 +34,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/startWaybar.s
 hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("~/.config/rofi/scripts/wallpaper.sh"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("~/.config/rofi/scripts/emoji-picker.sh"))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("~/.config/rofi/scripts/icon-picker.sh"))
-hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("~/.config/rofi/scripts/sddm.sh"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("~/.config/rofi/scripts/sddm.sh"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/rofi/scripts/wbswitcher.sh"))
 hl.bind(mainMod .. " + ALT + SPACE", hl.dsp.exec_cmd("~/.config/rofi/scripts/menu.sh"))
 
@@ -158,4 +158,9 @@ hl.define_submap("swap", function()
     hl.bind("left", hl.dsp.window.swap({ direction = "l" }), { repeating = true })
     hl.bind("right", hl.dsp.window.swap({ direction = "r" }), { repeating = true })
     hl.bind("escape", hl.dsp.submap("reset"))
+end)
+
+hl.bind(mainMod .. " + ALT + G", hl.dsp.submap("gaming"))
+hl.define_submap("gaming", function()
+    hl.bind(mainMod .. " + ALT + G", hl.dsp.submap("reset"))
 end)

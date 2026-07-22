@@ -27,11 +27,9 @@
     },
 
     "hyprland/submap": {
-        "format": "{}",
+        "format": "{icon}",
         "default-submap": "base",
         "tooltip": false,
-        "always-on": true,
-        "max-length": 8,
         "icons": {
             "resize": " ",
             "swap": " ",

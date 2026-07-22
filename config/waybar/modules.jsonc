@@ -1,0 +1,324 @@
+{
+  "custom/arrow-left":  { 
+    "format": "", 
+    "tooltip": false, 
+    "cursor": true
+  },
+  "custom/arrow-right": { 
+    "format": "",  
+    "tooltip": false,
+    "cursor": true
+  },
+  "custom/apps" : {
+    "format" : "󰣇 ",
+    "font-family" : "UbuntuMonoNerdFont",
+    "font-weight" : 400,
+    "on-click-right" : "~/.config/rofi/scripts/menu.sh"
+  },
+  "custom/notification" : {
+    "tooltip" : true,
+    "format" : "<span size='16pt'>{icon}</span>",
+    "format-icons" : {
+      "notification" : "󱅫 ",
+      "none" : "󰂜 ",
+      "dnd-notification" : "󰂠 ",
+      "dnd-none" : "󰪓 ",
+      "inhibited-notification" : "󰂛 ",
+      "inhibited-none" : "󰪑 ",
+      "dnd-inhibited-notification" : "󰂛 ",
+      "dnd-inhibited-none" : "󰪑 "
+    },
+    "return-type" : "json",
+    "exec-if" : "which swaync-client",
+    "exec" : "swaync-client -swb",
+    "on-click" : "swaync-client -t -sw",
+    "on-click-right" : "swaync-client -d -sw",
+    "escape" : true
+  },
+  "clock" : {
+    "format" : "    {:%H:%M}",
+    "tooltip-format" : "<tt>{calendar}</tt>",
+    "format-alt" : "    {:%a %e %b}",
+    "calendar" : {
+      "mode" : "year",
+      "weeks-pos" : "right",
+      "mode-mon-col" : 3,
+      "format" : {
+        "months" : "<span color='#acb0d0'><b>{}</b></span>",
+        "weeks" : "<span color='#7aa2f7'><b>W{}</b></span>",
+        "weekdays" : "<span color='#e0af68'><b>{}</b></span>",
+        "days" : "<span color='#acb0d0'>{}</span>",
+        "today" : "<span color='#41a6b5'><b>{}</b></span>"
+      }
+    }
+  },
+  "hyprland/submap" : {
+    "format" : "{}",
+    "default-submap" : "base",
+    "tooltip" : false,
+    "icons" : {
+      "resize" : " ",
+      "swap" : " ",
+      "gaming" : " ",
+      "base" : " "
+    }
+  },
+  "hyprland/workspaces" : {
+    "persistent-workspaces" : {
+      "*" : [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "on-click" : "activate",
+    "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'})\"",
+    "on-scroll-up":   "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'})\"",
+    "format" : "{icon} {windows}",
+    "format-icons" : {
+      "1" : "一",
+      "2" : "二",
+      "3" : "三",
+      "4" : "四",
+      "5" : "五",
+      "6" : "六",
+      "7" : "七",
+      "8" : "八",
+      "9" : "九",
+      "10" : "十",
+      "urgent" : "",
+      "focused" : "",
+      "default" : ""
+    },
+    "format-window-separator" : "",
+    "window-rewrite-default" : "  ",
+    "window-rewrite" : {
+      "class<.*imv*.>" : "  ",
+      "class<.*bambustudio*.>" : " 󰐫 ",
+      "class<.*bitwarden*.>" : "  ",
+      "class<.*handbrake*.>" : " 󰈫 ",
+      "class<.*stremio*.>" : " 󱖏 ",
+      "title<.*waydroid*.>" : "  ",
+      "class<.*grayjay*.>" : " 󱗆 ",
+      "title<.*amazon.*>" : "  ",
+      "class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>" : "  ",
+      "class<zen>" : " 󰰷 ",
+      "class<waterfox|waterfox-bin>" : "  ",
+      "class<microsoft-edge>" : "  ",
+      "class<Chromium|Thorium|[Cc]hrome>" : "  ",
+      "class<brave-browser>" : " 🦁 ",
+      "class<tor-browser>" : "  ",
+      "class<firefox-developer-edition>" : " 🦊 ",
+      "class<kitty|konsole>" : "  ",
+      "class<kitty-dropterm>" : "  ",
+      "class<com.mitchellh.ghostty>" : "  ",
+      "class<org.wezfurlong.wezterm>" : "  ",
+      "class<org.omarchy.terminal>" : " 󰏖 ",
+      "class<[Tt]hunderbird|[Tt]hunderbird-esr>" : "  ",
+      "class<eu.betterbird.Betterbird>" : "  ",
+      "class<.*Proton Mail.*>" : "   ",
+      "title<.*gmail.*>" : " 󰊫 ",
+      "class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>" : "  ",
+      "class<discord|[Ww]ebcord|Vesktop>" : "  ",
+      "title<.*whatsapp.*>" : "  ",
+      "title<.*zapzap.*>" : "  ",
+      "title<.*messenger.*>" : "  ",
+      "title<.*facebook.*>" : "  ",
+      "title<.*reddit.*>" : "  ",
+      "title<.*ChatGPT.*>" : " 󰚩 ",
+      "class<.*ChatGPT.*>" : " 󰚩 ",
+      "title<.*deepseek.*>" : " 󰚩 ",
+      "title<.*qwen.*>" : " 󰚩 ",
+      "class<subl>" : " 󰅳 ",
+      "class<slack>" : "  ",
+      "class<mpv>" : "  ",
+      "class<celluloid|Zoom>" : "  ",
+      "class<Cider>" : " 󰎆 ",
+      "title<.*Picture-in-Picture.*>" : "  ",
+      "title<.*youtube.*>" : "  ",
+      "class<vlc>" : " 󰕼 ",
+      "title<.*cmus.*>" : "  ",
+      "title<.*kew.*>" : "  ",
+      "class<[Ss]potify>" : "  ",
+      "class<virt-macodeger>" : "  ",
+      "class<.virt-manager-wrapped>" : "  ",
+      "class<virtualbox manager>" : " 💽",
+      "title<virtualbox>" : " 💽",
+      "class<remmina>" : " 🖥️",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>" : " 󰨞 ",
+      "class<dev.zed.Zed>" : " 󰵁 ",
+      "class<codeblocks>" : " 󰅩 ",
+      "title<.*github.*>" : "  ",
+      "class<mousepad>" : "  ",
+      "class<libreoffice-writer>" : "  ",
+      "class<libreoffice-startcenter>" : " 󰏆 ",
+      "class<libreoffice-calc>" : "  ",
+      "title<.*nvim ~.*>" : "  ",
+      "class<Emacs>" : " 󰱯 ",
+      "class<org.gnome.Nautilus>" : " 󰣆 ",
+      "title<.*vim.*>" : "  ",
+      "title<.*figma.*>" : "  ",
+      "title<.*jira.*>" : "  ",
+      "class<jetbrains-idea>" : "  ",
+      "title<*.VSCode.*>" : " 󰨞 ",
+      "class<.*code.*>" : " 󰨞 ",
+      "class<obs|com.obsproject.Studio>" : "  ",
+      "class<polkit-gnome-authentication-agent-1>" : " 󰒃 ",
+      "class<nwg-look>" : " ",
+      "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>" : " 󱡫",
+      "class<steam>" : "  ",
+      "class<thunar|nemo>" : " 󰝰 ",
+      "class<Gparted>" : "  ",
+      "class<gimp>" : "  ",
+      "class<emulator>" : " 📱",
+      "class<android-studio>" : "  ",
+      "class<org.pipewire.Helvum>" : " 󰓃",
+      "class<localsend>" : "  ",
+      "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>" : " 󰹛 "
+    }
+  },
+   "bluetooth": {
+        "format": "{}",
+        "format-on": "󰂰 ",
+        "format-off": "󰂲 ",
+        "format-disabled": "󰂲 ",
+        "format-connected": "{device_alias}",
+        "format-connected-battery": "{device_alias}",
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
+        "on-click": "hyprctl eval \"hl.exec_cmd('kitty bluetui')\""
+    },
+  "tray" : {
+    "icon-size" : 16,
+    "spacing" : 10,
+    "cursor" : true
+  },
+    "backlight": {
+        "scroll-step" : 2,
+        "format": "{icon}",
+        "tooltip-format" : "{percent}%",
+        "format-icons": [ "󰃞", "󰃝", "󰃟", "󰃠" ]
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-muted": "<span size='12pt'>󰝟</span>",
+        "scroll-step": 2,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\"",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "<span size='12pt'>󰕿</span>",
+                "<span size='12pt'>󰖀</span>",
+                "<span size='12pt'>󰕾</span>"
+            ]
+        }
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "cursor": true,
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\""
+    },
+
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "cursor": true
+    },
+  "network" : {
+    "format-icons" : [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤥 ",
+      "󰤨 "
+    ],
+    "format" : "{icon}",
+    "format-wifi" : "{icon}",
+    "format-ethernet" : "󰌘   ethernet",
+    "format-disconnected" : "󰤮 ",
+    "tooltip-format-wifi" : "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet" : "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected" : "Disconnected",
+    "interval" : 3,
+    "spacing" : 1,
+    "on-click" : "omarchy-launch-wifi"
+  },
+  "mpris" : {
+    "interval" : 10,
+    "format" : "{player_icon}  {dynamic}",
+    "format-paused" : "{status_icon}  {artist}",
+    "on-click-middle" : "playerctl play-pause",
+    "on-click" : "playerctl previous",
+    "on-click-right" : "playerctl next",
+    "scroll-step" : 5.0,
+    "on-scroll-up" : "$HOME/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down" : "$HOME/.config/hypr/scripts/volume.sh --dec",
+    "smooth-scrolling-threshold" : 1,
+    "tooltip" : true,
+    "tooltip-format" : "{status_icon} {title}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+    "player-icons" : {
+      "chromium" : " ",
+      "default" : " ",
+      "firefox" : " ",
+      "kdeconnect" : " ",
+      "mopidy" : " ",
+      "mpv" : "󰐹 ",
+      "spotify" : "󰎆 ",
+      "vlc" : "󰕼 "
+    },
+    "status-icons" : {
+      "paused" : "",
+      "playing" : "",
+      "stopped" : ""
+    },
+    "dynamic-order" : [
+      "artist"
+    ],
+    "ignored-players" : [
+      "zen"
+    ],
+    "max-length" : 25
+  },
+      "load": {
+        "interval": 30,
+        "format": "   {load1}%",
+        "cursor": true
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "   {used:0.1f}G/{total:0.1f}G",
+        "states": {
+            "warning": 80,
+            "critical": 90
+        }
+    },    "cpu": {
+        "interval": 30,
+        "format":"   {usage}%",
+        "cursor": true,
+        "states": {
+            "warning": 80,
+            "critical": 90
+        }
+    },
+    "temperature": {
+        "interval": 10,
+        "format": "{icon}  {temperatureC}°",
+        "critical-threshold": 90,
+        "format-icons": ["","","","",""]	
+    },
+}

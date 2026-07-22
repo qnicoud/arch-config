@@ -8,7 +8,7 @@ configuration {
 
 * {
     background-color:       transparent;
-    background:             env(ROFI_BACKGROUND_COLOR,          #000000CF);
+    background:             env(ROFI_BACKGROUND_COLOR,          #000000);
     background-transparent: env(ROFI_BACKGROUND_TRANSPARENT,    #000000CF);
     text-color:             env(ROFI_TEXT_COLOR,                #D8DEE9);
 //    primary:                env(ROFI_ACCENT_COLOR,              #FD5A3A);

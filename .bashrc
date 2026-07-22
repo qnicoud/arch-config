@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #~/.config/matugen/templates/hyprland-colors.conf'=====================================================================================================g
 # Setup color variables :
 RESTORE='\033[0m'
@@ -202,15 +204,21 @@ function gitchk {
 	[ $VERBOSE == "True" ] && echo
 
     if [ -f ~/.gitchk.ongoing ] ; then
-	    [ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo are already being checked. ${RESTORE}"
-        [ $VERBOSE == "True" ] && echo
-        return
-    elif [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +5 | grep -q .gitchk ; then 
+        if test $(find "~/.gitchk.ongoing" -cmin -60 2&>1 /dev/null) ; then
+            [ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo are already being checked. ${RESTORE}"
+            [ $VERBOSE == "True" ] && echo
+            return
+        else
+            rm ~/.gitchk.ongoing
+        fi
+    fi
+
+    if [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +5 | grep -q .gitchk ; then 
     	CURR_DIR=$(pwd)
         rm ~/.gitchk 2> /dev/null
         touch ~/.gitchk.ongoing ~/.gitchk
 	    FOUND="FALSE"
-	    for repo in $(find ~ -type d -name ".git" 2>/dev/null) ; do
+	    for repo in $(find ~ -type d -name ".git" ! -name "*.cache*" 2>/dev/null) ; do
 		    builtin cd ${repo}/../
 		    if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
 			    #[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
