@@ -47,7 +47,7 @@ choice=$((
 
 IMG_PATH="$WALL_DIR/$choice"
 IMG_NAME="${choice%.*}"
-
+#
 # =========================
 # Random grow position
 # =========================
@@ -100,7 +100,8 @@ matugen image "$IMG_PATH" --prefer 'saturation'
 # =========================
 
 # Reload waybar CSS only
-pkill -USR2 waybar
+#pkill -USR2 waybar
+pkill waybar && waybar &
 
 # Update openrgb colors
 python ~/.config/rofi/scripts/openrgb_setup.py

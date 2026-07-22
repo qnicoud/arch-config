@@ -204,7 +204,7 @@ function gitchk {
 	[ $VERBOSE == "True" ] && echo
 
     if [ -f ~/.gitchk.ongoing ] ; then
-        if test $(find "~/.gitchk.ongoing" -cmin -60 2&>1 /dev/null) ; then
+        if test $(find "~/.gitchk.ongoing" -cmin -10 2&>1 /dev/null) ; then
             [ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo are already being checked. ${RESTORE}"
             [ $VERBOSE == "True" ] && echo
             return
