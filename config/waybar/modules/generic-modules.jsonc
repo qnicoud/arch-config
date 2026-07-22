@@ -1,0 +1,162 @@
+{
+  "clock" : {
+    "format" : "    {:%H:%M}",
+    "tooltip-format" : "<tt>{calendar}</tt>",
+    "format-alt" : "    {:%a %e %b}",
+    "calendar" : {
+      "mode" : "year",
+      "weeks-pos" : "right",
+      "mode-mon-col" : 3,
+      "format" : {
+        "months" : "<span color='#acb0d0'><b>{}</b></span>",
+        "weeks" : "<span color='#7aa2f7'><b>W{}</b></span>",
+        "weekdays" : "<span color='#e0af68'><b>{}</b></span>",
+        "days" : "<span color='#acb0d0'>{}</span>",
+        "today" : "<span color='#41a6b5'><b>{}</b></span>"
+      }
+    }
+  },
+  "bluetooth": {
+        "format": "{}",
+        "format-on": "󰂰 ",
+        "format-off": "󰂲 ",
+        "format-disabled": "󰂲 ",
+        "format-connected": "{device_alias}",
+        "format-connected-battery": "{device_alias}",
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
+        "on-click": "hyprctl eval \"hl.exec_cmd('kitty bluetui')\""
+    },
+  "tray" : {
+    "icon-size" : 14,
+    "expand": true,
+    "spacing" : 10,
+    "cursor" : true
+  },
+    "backlight": {
+        "scroll-step" : 2,
+        "format": "{icon}",
+        "tooltip-format" : "{percent}%",
+        "format-icons": [ "󰃞", "󰃝", "󰃟", "󰃠" ]
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-muted": "<span size='12pt'>󰝟</span>",
+        "scroll-step": 2,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\"",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "<span size='12pt'>󰕿</span>",
+                "<span size='12pt'>󰖀</span>",
+                "<span size='12pt'>󰕾</span>"
+            ]
+        }
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "cursor": true,
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\""
+    },
+
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "cursor": true
+    },
+  "network" : {
+    "format-icons" : [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤥 ",
+      "󰤨 "
+    ],
+    "format" : "{icon}",
+    "format-wifi" : "{icon}",
+    "format-ethernet" : "󰌘   ethernet",
+    "format-disconnected" : "󰤮 ",
+    "tooltip-format-wifi" : "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet" : "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected" : "Disconnected",
+    "interval" : 3,
+    "spacing" : 1,
+    "on-click" : "omarchy-launch-wifi"
+  },
+  "mpris" : {
+    "interval" : 10,
+    "format" : "{player_icon}  {dynamic}",
+    "format-paused" : "{status_icon}  {artist}",
+    "on-click-middle" : "playerctl play-pause",
+    "on-click" : "playerctl previous",
+    "on-click-right" : "playerctl next",
+    "scroll-step" : 5.0,
+    "on-scroll-up" : "$HOME/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down" : "$HOME/.config/hypr/scripts/volume.sh --dec",
+    "smooth-scrolling-threshold" : 1,
+    "tooltip" : true,
+    "tooltip-format" : "{status_icon} {title}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+    "player-icons" : {
+      "chromium" : " ",
+      "default" : " ",
+      "firefox" : " ",
+      "kdeconnect" : " ",
+      "mopidy" : " ",
+      "mpv" : "󰐹 ",
+      "spotify" : "󰎆 ",
+      "vlc" : "󰕼 "
+    },
+    "status-icons" : {
+      "paused" : "",
+      "playing" : "",
+      "stopped" : ""
+    },
+    "dynamic-order" : [
+      "artist"
+    ],
+    "ignored-players" : [
+      "zen"
+    ],
+    "max-length" : 25
+  },
+      "load": {
+        "interval": 30,
+        "format": "   {load1}%",
+        "cursor": true
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "   {used:0.1f}G/{total:0.1f}G",
+        "states": {
+            "warning": 80,
+            "critical": 90
+        }
+    },    "cpu": {
+        "interval": 30,
+        "format":"   {usage}%",
+        "cursor": true,
+        "states": {
+            "warning": 80,
+            "critical": 90
+        }
+    },
+    "temperature": {
+        "interval": 10,
+        "format": "{icon}  {temperatureC}°",
+        "critical-threshold": 90,
+        "format-icons": ["","","","",""]	
+    },
+}

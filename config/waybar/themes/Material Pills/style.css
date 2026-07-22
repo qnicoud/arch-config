@@ -72,8 +72,8 @@ tooltip label {
 
 #clock,
 #mpris,
-#tray,
 #custom-notification,
+#tray-drawer,
 #network,
 #bluetooth {
   background-color: @bg0;
@@ -102,17 +102,16 @@ tooltip label {
 }
 
 #custom-apps,
-#custom-arrow-left,
-#custom-arrow-right,
 #clock,
 #mpris,
+#tray-drawer,
 #pulseaudio,
 #network,
 #bluetooth {
   color: @fg;
 }
 
-#tray {
+#tray-drawer {
   color: @fg;
   margin-right: 11px;
 }
@@ -121,10 +120,8 @@ tooltip label {
   color: @fg;
 }
 
-#custom-apps,
-#custom-arrow-left,
-#custom-arrow-right,
 #battery,
+#tray,
 #cpu,
 #memory,
 #load,
@@ -139,11 +136,21 @@ tooltip label {
   background-color: @bg1;
 }
 
+#tray {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #custom-apps,
-#custom-arrow-left,
-#custom-arrow-right {
+#custom-terminal,
+#custom-explorer,
+#custom-vscode,
+#custom-firefox,
+#custom-notes,
+#custom-desktop {
   background-color: unset;
   border-width: 0;
+  margin: 0px 5px;
 }
 
 slider {

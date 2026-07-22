@@ -1,0 +1,62 @@
+{
+    // Groups configuration //
+    "group/ressource-usage#groups" : {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true,
+            "reveal-delay": 450
+        },
+        "modules" : [
+            "custom/desktop", "battery", "cpu", "load", "memory", "temperature"
+        ]
+    },
+
+    "group/user-apps#groups" : {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true,
+            "reveal-delay": 450
+        },
+        "modules" : [
+            "custom/apps", "custom/terminal", "custom/vscode", "custom/explorer", "custom/firefox", "custom/notes"
+        ]
+    },
+
+    "group/group-volume#groups": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true,
+            "reveal-delay": 450
+        },
+        "modules" : [
+            "pulseaudio", "pulseaudio/slider"
+        ]
+    },
+
+    "group/group-backlight#groups": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true,
+            "reveal-delay": 450
+        },
+        "modules" : [
+            "backlight", "backlight/slider"
+        ]
+    },
+
+    "group/tray-drawer#groups": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": false,
+            "reveal-delay": 450
+        },
+        "modules": [
+            "custom/tray", "tray"
+        ]
+    }
+}

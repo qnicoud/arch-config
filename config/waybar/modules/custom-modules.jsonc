@@ -1,0 +1,68 @@
+{
+  "custom/tray": {
+    "format": "󰏖 ",
+    "tooltip": false,
+    "cursor": true
+  },
+  "custom/desktop":  { 
+    "format": "󰇅", 
+    "tooltip": false, 
+    "cursor": true
+  },
+  "custom/terminal": { 
+    "format": " ",
+    "tooltip": false,
+    "cursor": true,
+    "on-click": "kitty"
+  },
+  "custom/vscode": { 
+    "format": " ",
+    "tooltip": false,
+    "cursor": true,
+    "on-click": "code"
+  },
+   "custom/explorer": { 
+    "format": " ",
+    "tooltip": false,
+    "cursor": true,
+    "on-click": "nautilus"
+  },
+   "custom/firefox": { 
+    "format": " ",
+    "tooltip": false,
+    "cursor": true,
+    "on-click": "firefox"
+  },
+   "custom/notes": { 
+    "format": "󰺿 ",
+    "tooltip": false,
+    "cursor": true,
+    "on-click": "gtk-launch doom"
+  },
+   "custom/apps" : {
+    "format" : "󰣇 ",
+    "font-family" : "UbuntuMonoNerdFont",
+    "font-weight" : 400,
+    "on-click-right" : "~/.config/rofi/scripts/menu.sh"
+  },
+  "custom/notification" : {
+    "tooltip" : true,
+    "format" : "<span size='16pt'>{icon}</span>",
+    "format-icons" : {
+      "notification" : "󱅫 ",
+      "none" : "󰂜 ",
+      "dnd-notification" : "󰂠 ",
+      "dnd-none" : "󰪓 ",
+      "inhibited-notification" : "󰂛 ",
+      "inhibited-none" : "󰪑 ",
+      "dnd-inhibited-notification" : "󰂛 ",
+      "dnd-inhibited-none" : "󰪑 "
+    },
+    "return-type" : "json",
+    "exec-if" : "which swaync-client",
+    "exec" : "swaync-client -swb",
+    "on-click" : "swaync-client -t -sw",
+    "on-click-right" : "swaync-client -d -sw",
+    "escape" : true
+  }
+}

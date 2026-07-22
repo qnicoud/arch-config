@@ -1,244 +1,28 @@
 {
+    // General //
     "position": "top",
     "margin-top": 4,
-    "modules-left": ["custom/apps", "clock", "mpris", "hyprland/submap"],
-    "modules-center": ["hyprland/workspaces", "custom/notification"],
+
+
+    // Modules and groups positionning //
+    "modules-left": [
+        "group/user-apps#groups" ,"group/ressource-usage#groups", "clock", "mpris", "hyprland/submap"
+    ],
+    
+    "modules-center": [
+        "hyprland/workspaces", "custom/notification"
+    ],
+    
     "modules-right":[
-        "tray",
-        "pulseaudio",
-        "network"
+        "bluetooth", "group/group-volume#groups", "network", "group/tray-drawer#groups"
     ],
 
 
-    //MODULES//
-
-	"custom/apps": { 
-	    "format": "Quentin",
-		"font-family": "UbuntuMonoNerdFont",
-		"font-weight": 400,
-		"on-click": "~/.config/rofi/scripts/menu.sh"
-        // "on-click": "rofi -show drun"
-	}, 
-
-    "clock": {
-        "format": "    {:%H:%M}",
-        "format-alt": "    {:%a %e %b}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-
-    "hyprland/submap": {
-        "format": "{}",
-        "default-submap": "base",
-        "tooltip": false,
-        "always-on": true,
-        "max-length": 8,
-        "icons": {
-            "resize": " ",
-            "swap": " ",
-            "gaming": " ",
-            "base": " "
-        }
-    },
-
-    "hyprland/workspaces": {
-	    "persistent-workspaces": {"*": [ 1,2,3,4,5 ]},
-	    //"on-click": "activate",
-        "format": "{icon} {windows}",
-        "format-icons": {
-		    "1": "一",
-		    "2": "二",
-		    "3": "三",
-		    "4": "四",
-		    "5": "五",
-		    "6": "六",
-		    "7": "七",
-		    "8": "八",
-		    "9": "九",
-            "10": "十",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        },
-	    "format-window-separator": " ",
-	    "window-rewrite-default": " ",
-	    "window-rewrite": {		
-            "class<.*imv*.>": " ",
-            "class<.*bambustudio*.>": "󰐫 ",
-            "class<.*bitwarden*.>": " ",
-            "class<.*handbrake*.>": "󰈫 ",
-            "class<.*stremio*.>": "󱖏 ",
-            "title<.*waydroid*.>": " ",
-            "class<.*grayjay*.>": "󱗆 ",
-	    	"title<.*amazon.*>": " ",
-	    	"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
-	    	"class<zen>": "󰰷 ",
-	    	"class<waterfox|waterfox-bin>": " ",
-	    	"class<microsoft-edge>": " ",
-	    	"class<Chromium|Thorium|[Cc]hrome>": " ",
-	    	"class<brave-browser>": "🦁 ",
-	    	"class<tor-browser>": " ",
-	    	"class<firefox-developer-edition>": "🦊 ",
-	    	"class<kitty|konsole>": " ",
-	    	"class<kitty-dropterm>": " ",
-	    	"class<com.mitchellh.ghostty>": " ",
-	    	"class<org.wezfurlong.wezterm>": " ",
-            "class<org.omarchy.terminal>": "󰏖 ",
-	    	"class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
-	    	"class<eu.betterbird.Betterbird>": " ",
-	    	"title<.*gmail.*>": "󰊫 ",
-	    	"class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
-	    	"class<discord|[Ww]ebcord|Vesktop>": " ",
-	    	"title<.*whatsapp.*>": " ",
-        "title<.*zapzap.*>": " ",
-	    	"title<.*messenger.*>": " ",
-	    	"title<.*facebook.*>": " ",
-	    	"title<.*reddit.*>": " ",
-	    	"title<.*ChatGPT.*>": "󰚩 ",
-        "class<.*ChatGPT.*>": "󰚩 ",
-	    	"title<.*deepseek.*>": "󰚩 ",
-	    	"title<.*qwen.*>": "󰚩 ",
-	    	"class<subl>": "󰅳 ",
-	    	"class<slack>": " ",
-	    	"class<mpv>": " ",
-	    	"class<celluloid|Zoom>": " ",
-	    	"class<Cider>": "󰎆 ",
-	    	"title<.*Picture-in-Picture.*>": " ",
-	    	"title<.*youtube.*>": " ",
-	    	"class<vlc>": "󰕼 ",
-	    	"title<.*cmus.*>": " ",
-            "title<.*kew.*>": " ",
-	    	"class<[Ss]potify>": " ",
-	    	"class<virt-macodeger>": " ",
-	    	"class<.virt-manager-wrapped>": " ",
-	    	"class<virtualbox manager>": "💽",
-	    	"title<virtualbox>": "💽",
-	    	"class<remmina>": "🖥️",
-	    	"class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
-        "class<dev.zed.Zed>": "󰵁 ",
-	    	"class<codeblocks>": "󰅩 ",
-	    	"title<.*github.*>": " ",
-	    	"class<mousepad>": " ",
-	    	"class<libreoffice-writer>": " ",
-	    	"class<libreoffice-startcenter>": " 󰏆 ",
-	    	"class<libreoffice-calc>": " ",
-	    	"title<.*nvim ~.*>": " ",
-        "class<org.gnome.Nautilus>": "󰣆 ",
-	    	"title<.*vim.*>": " ",
-	    	"title<.*figma.*>": " ",
-	    	"title<.*jira.*>": " ",
-	    	"class<jetbrains-idea>": " ",
-        "title<*.VSCode.*>": "󰨞 ",
-        "class<.*code.*>": "󰨞 ",
-	    	"class<obs|com.obsproject.Studio>": " ",
-	    	"class<polkit-gnome-authentication-agent-1>": "󰒃 ",
-	    	"class<nwg-look>": " ",
-	    	"class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
-	    	"class<steam>": " ",
-	    	"class<thunar|nemo>": "󰝰 ",	
-        "class<Gparted>":" ",
-	    	"class<gimp>": " ",
-	    	"class<emulator>": "📱",
-	    	"class<android-studio>": " ",
-       	"class<org.pipewire.Helvum>": "󰓃",
-        "class<localsend>":" ",
-        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛 "
-	    	}
-	    },
-
-    "tray": {
-    "icon-size": 16,
-    "spacing": 10,
-    },
-
-    "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "on-click": "pulsemixer",
-    "on-click-right": "pulsemixer",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": " ",
-    "format-icons": {
-      "default": [
-        "",
-        " ",
-        " "
-       ]
-     }
-    },
-
-    "network": {
-     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-     "format": "{icon}",
-     "format-wifi": "{icon}",
-     "format-ethernet": "󰌘   ethernet",
-     "format-disconnected": "󰤮 ",
-     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-     "tooltip-format-disconnected": "Disconnected",
-     "interval": 3,
-     "spacing": 1,
-     "on-click": "omarchy-launch-wifi"
-    },
-
-   "custom/notification": {
-      "tooltip": true,
-      "format": "<span size='16pt'>{icon}</span>",
-      "format-icons": {
-        "notification": "󱅫 ",
-        "none": "󰂜 ",
-        "dnd-notification": "󰂠 ",
-        "dnd-none": "󰪓 ",
-        "inhibited-notification": "󰂛 ",
-        "inhibited-none": "󰪑 ",
-        "dnd-inhibited-notification": "󰂛 ",
-        "dnd-inhibited-none": "󰪑 "
-      },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    },
-
-    "mpris": {
-	    "interval": 10,
-	    "format": "{player_icon}  {dynamic}",
-	    "format-paused": "{status_icon}  {artist}",
-	    "on-click-middle": "playerctl play-pause",
-	    "on-click": "playerctl previous",
-	    "on-click-right": "playerctl next",
-	    "scroll-step": 5.0,
-	    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
-	    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
-	    "smooth-scrolling-threshold": 1,
-	    "tooltip": true,
-	    "tooltip-format": "{status_icon} {title}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
-	    "player-icons": {
-	    	"chromium": " ",
-	    	"default": " ",
-	    	"firefox": " ",
-	    	"kdeconnect": " ",
-	    	"mopidy": " ",
-	    	"mpv": "󰐹 ",
-	    	"spotify": "󰎆 ",
-	    	"vlc": "󰕼 ",
-	    },
-	    "status-icons": {
-	    	"paused": "",
-	    	"playing": "",
-	    	"stopped": "",
-	    },
-	    "dynamic-order": ["artist"],
-	    "ignored-players": [ "zen"],
-	    "max-length": 25,
-    },
-
-	"custom/screenrecording-indicator": {
-		"format": " ",
-        "on-click": "kitty --title=Recorder sh -c '~/.config/hypr/scripts/screenrec.sh'",
-        "signal": 8,
-		"tooltip": false,
-        "return-type": "json"
-  },
+    // Groups and modules configuration //
+    "include": [ 
+        "~/.config/waybar/modules/custom-modules.jsonc",
+        "~/.config/waybar/modules/generic-modules.jsonc",
+        "~/.config/waybar/modules/hyprland-modules.jsonc",
+        "~/.config/waybar/groups.jsonc"
+    ]
 }
