@@ -7,7 +7,7 @@
             "2": "#ffb77b"
         },
         "padding": {
-	        "top": 1,
+	        "top": 4,
 	        "left": 2
         }
 	},
@@ -17,45 +17,57 @@
     },
     "modules": [
 	"break",
-	"title",
-        {
-            "type": "os",
-            "key": "os    "
-        },
-        {   "type": "wm",
-            "key" : "de    "
-        },
-        {
-            "type": "packages",
-            "format": "{} (pacman)",
-            "key": "pkgs  "
-        },
-        {   "type": "shell",
-            "key": "shell "
-        },
-        {
-            "type": "kernel",
-            "key": "kernel"
-        },
-        {
-            "type": "uptime",
-            "format": "{2}h {3}m",
-            "key": "uptime"
-        },
-        {
-            "type": "command",
-            "key": "os age",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s);    days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"
-        },
-        {
-            "type": "memory",
-            "key": "memory"
-        },
-        "break",
-        {
-            "type": "colors",
-            "symbol": "circle"
-        },
-        "break"
+	{
+        "type": "title",
+        "key": "           "
+    },
+    {
+        "type": "custom",
+        "format": " ╭────────────────────────────────────────╮"
+    },
+    {
+        "type": "os",
+        "key": "   󰣇 OS      "
+    },
+    {   "type": "wm",
+        "key" : "   󱂬 WM      "
+    },
+    {
+        "type": "packages",
+        "format": "{} (pacman)",
+        "key": "   󰏖 Packages"
+    },
+    {   
+        "type": "shell",
+        "key": "   󰞷 Shell   "
+    },
+    {
+        "type": "kernel",
+        "key": "    Kernel  "
+    },
+    {
+        "type": "uptime",
+        "format": "{2}h {3}m",
+        "key": "   󰅐 Uptime  "
+    },
+    {
+        "type": "command",
+        "key": "   󱘪 OS Age  ",
+        "text": "birth_install=$(stat -c %W /); current=$(date +%s);    days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"
+    },
+    {
+        "type": "memory",
+        "key": "   󰍛 Memory  "
+    },
+    {
+      "type": "custom",
+      "format": " ╰────────────────────────────────────────╯"
+    },
+    {
+        "type": "colors",
+        "symbol": "circle",
+        "key": "            "
+    },
+    "break"
     ]
 }
