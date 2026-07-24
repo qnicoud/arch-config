@@ -69,7 +69,7 @@ NOITALIC='\e[23m'
 #alias hyprland="hyprland > hyprland.logs 34;2m>&1 &"
 source ~/.config/prompt/git-prompt.sh
 source ~/.config/prompt/venv-prompt.sh
-export GIT_PS1_SHOWUPSTREAM="auto verbose"
+export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWDIRTYSTATE="True"
 export GIT_PS1_SHOWCOLORHINTS="True"
 export PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "\e[34;2m ── \e[22m󰊢  %s") PS1_CMD2=$(__venv_ps1 "\e[34;2m ── \e[22m󰰫  %s")'; PS1='\n\[\e[34;2m\]╭──\[\e[22m\]  \w${PS1_CMD1}${PS1_CMD2}\[\e[34;2m\] ── \[\e[22m\]  \t\n\[\e[34;2m\]╰──\[\e[1m\]$?\[\e[0;34;2m\]─\[\e[22m\]❯ \[\e[0m\]'
@@ -224,7 +224,7 @@ function gitchk {
             [ $VERBOSE == "True" ] && echo
             return
         else
-            rm ~/.gitchk.ongoing
+            rm ~/.gitchk.ongoing 2>/dev/null
         fi
     fi
 
