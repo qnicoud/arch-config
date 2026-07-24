@@ -26,49 +26,53 @@ NOITALIC='\e[23m'
 #======================================================================================================
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/quentin/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/quentin/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/quentin/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/quentin/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/home/quentin/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/quentin/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/quentin/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/quentin/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
 #
 # To remove an error in conda
-export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+#export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
-function load_conda_env {
-    if [ -f $PWD/.conda_config ]; then
-        export CONDACONFIGDIR=$PWD
-        if [ -f ./.conda_config ] && ! conda env list | grep -q $(cat ./.conda_config) ; then 
-            conda create -yqn $(cat ./.conda_config)
-        fi
-        conda activate $(cat ./.conda_config)
-    elif [ "$CONDACONFIGDIR" ]; then
-        if [[ $PWD != *"$CONDACONFIGDIR"* ]]; then
-            unset CONDACONFIGDIR
-            conda activate "base"
-        fi
-    else
-        conda activate "base"
-    fi 
-}
-load_conda_env
-
+#function load_conda_env {
+#    if [ -f $PWD/.conda_config ]; then
+#        export CONDACONFIGDIR=$PWD
+#        if [ -f ./.conda_config ] && ! conda env list | grep -q $(cat ./.conda_config) ; then 
+#            conda create -yqn $(cat ./.conda_config)
+#        fi
+#        conda activate $(cat ./.conda_config)
+#    elif [ "$CONDACONFIGDIR" ]; then
+#        if [[ $PWD != *"$CONDACONFIGDIR"* ]]; then
+#            unset CONDACONFIGDIR
+#            conda activate "base"
+#        fi
+#    else
+#        conda activate "base"
+#    fi 
+#}
 
 #======================================================================================================
 # Define prompt
 #omp_theme="multiverse-neon.omp.json"
-omp_theme="emodipt-extend.omp.json"
-omp_theme="emodipt-extend_CUSTOM.omp.json"
+#omp_theme="emodipt-extend_CUSTOM.omp.json"
 #omp_theme="tokyonight_storm.omp.json"
-eval "$(~/.local/bin/oh-my-posh init bash --config ~/.local/bin/${omp_theme})"
-alias hyprland="hyprland > hyprland.logs 2>&1 &"
+#omp_theme="pure.omp.json"
+#eval "$(~/.local/bin/oh-my-posh init bash --config ~/.local/bin/${omp_theme})"
+#alias hyprland="hyprland > hyprland.logs 34;2m>&1 &"
+source ~/.config/prompt/git-prompt.sh
+source ~/.config/prompt/venv-prompt.sh
+export GIT_PS1_SHOWUPSTREAM="auto verbose"
+export GIT_PS1_SHOWDIRTYSTATE="True"
+export GIT_PS1_SHOWCOLORHINTS="True"
+export PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "\e[34;2m ── \e[22m󰊢  %s") PS1_CMD2=$(__venv_ps1 "\e[34;2m ── \e[22m󰰫  %s")'; PS1='\n\[\e[34;2m\]╭──\[\e[22m\]  \w${PS1_CMD1}${PS1_CMD2}\[\e[34;2m\] ── \[\e[22m\]  \t\n\[\e[34;2m\]╰──\[\e[1m\]$?\[\e[0;34;2m\]─\[\e[22m\]❯ \[\e[0m\]'
 
 #=======================================================================================================
 # Quality of life aliases and functions
@@ -114,6 +118,17 @@ function kk {
     echo -e "\n   ${BLUE}${tot} ${terms} should have popped. :)${RESTORE}"
 }
 
+function load_venv {
+    if [ -d ${PWD}/.venv ]; then
+        VENV_PROJECT_DIR="${PWD}"
+        source .venv/bin/activate
+    fi
+
+    if ! [ -z "${VENV_PROJECT_DIR}" ] && [[ $(type -t deactivate) == function ]] ; then
+        echo "${PWD}" | grep -q "${VENV_PROJECT_DIR}" || deactivate
+    fi
+}
+
 function exec_proc {
     if [ ! -f ${PWD}/.script ] ; then
         return 0
@@ -146,7 +161,7 @@ function exec_proc {
 
 function cd { 
     builtin cd "$@" && 
-    load_conda_env &&
+    load_venv &&
     exec_proc
 }
 
@@ -213,7 +228,7 @@ function gitchk {
         fi
     fi
 
-    if [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +5 | grep -q .gitchk ; then 
+    if [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +2 | grep -q .gitchk ; then 
     	CURR_DIR=$(pwd)
         rm ~/.gitchk 2> /dev/null
         touch ~/.gitchk.ongoing ~/.gitchk
