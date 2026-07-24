@@ -7,22 +7,23 @@ sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     bluez bluez-utils gnome-bluetooth-3.0a bluetui bluetoothctl pulseaudio-bluetooth ttf-font-awesome otf-font-awesome \
     unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full libvirt  virt-manager \
     dnsmasq dmidecode dart-sass dart-sass gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
-    perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch swaync matugen wf-recorder pamixer vlc-plugin-ffmpeg cmus qbittorrent picard
+    perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch swaync matugen wf-recorder pamixer \
+    vlc-plugin-ffmpeg cmus qbittorrent picard uv
 
-echo "yay -S vim-plug proton-mail spotify-player-full virtio-win superfile" 
+echo "yay -S vim-plug proton-mail virtio-win superfile" 
 
 echo "Hyprland & related tools"
 sudo pacman -Sy egl-wayland nwg-displays hypridle hyprcursor waybar hyprland
-echo "yay -S nordzy-hyprecursors nordzy-cursors hyprshot wlogout" 
+echo "yay -S hyprshot wlogout rose-pine-hyprcursor rose-pine-cursor" 
 
 echo "Authent polkit related"
 sudo pacman -Sy hyprpolkitagent 
 
 echo "Dev related packages"
 sudo pacman -Sy docker kubectl bash-completion helm arduino-ide jq postgresql
-echo "yay -Sy lazydocker rpi-imager thonny"
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
-echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
+echo "yay -Sy lazydocker rpi-imager code-translucent"
+#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
+#echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
 
 echo "Nvidia graphics card utilities"
 sudp pacman -Sy nvidia nvidia-settings nvidia-utils lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia libvdpau libxnvctrl vulkan-icd-loader lib32-vulkan-icd-loader
@@ -33,6 +34,7 @@ echo "yay -S wine-stable"
 
 echo "Steam +  Gaming"
 echo "Pour isntaller steam décomenter la section multilib du fichier /etc/pacman.conf puis : pacman -Syu ; pacman -S steam"
+echo "Penser à décomenter la ligne #Color pour un affichage plus lisible"
 sudo pacman -Sy lib32-fontconfig
 echo "yay -S minecraft-launcher gnome-keyring"
 

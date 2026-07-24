@@ -2447,12 +2447,12 @@
     "LogManager": {
         "dialog_no_show_hashes": [
             14306703760882907409,
-            1994918717196657649
+            1994918717196657649,
+            16570991320436560612
         ],
         "log_console": false
     },
     "UserInterface": {
-        "RunZoneChecks": false,
         "autoload_profiles": {
             "exit_profile": {
                 "enabled": false,
@@ -2481,6 +2481,7 @@
         },
         "greyscale_tray_icon": true,
         "language": "System Default",
-        "minimize_on_close": true
+        "minimize_on_close": true,
+        "run_zone_checks": false
     }
 }
