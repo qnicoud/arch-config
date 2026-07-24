@@ -11,9 +11,6 @@ configuration {
     background:             env(ROFI_BACKGROUND_COLOR,          #000000);
     background-transparent: env(ROFI_BACKGROUND_TRANSPARENT,    #000000CF);
     text-color:             env(ROFI_TEXT_COLOR,                #D8DEE9);
-//    primary:                env(ROFI_ACCENT_COLOR,              #FD5A3A);
-//    secondary:              env(ROFI_SECONDARY_COLOR,           #EFB86B);
-//    urgent:                 env(ROFI_URGENT_COLOR,              #ff3c26);
     primary: #ffb77b;
     primary-fixed: #ffdcc2;
     primary-fixed-dim: #ffb77b;
@@ -50,8 +47,8 @@ configuration {
     shadow: #000000;
     scrim: #000000;
     inverse-surface: #efe0d6;
-    inverse-on-surface: #382f28;
-    inverse-primary: #88511d;
+    inverse-on-surface: #382f28cc;
+    inverse-primary: #88511dcc;
     surface-dim: #19120c;
     surface-bright: #413731;
     surface-container-lowest: #140d08;

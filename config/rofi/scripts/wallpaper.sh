@@ -100,11 +100,11 @@ matugen image "$IMG_PATH" --prefer 'saturation'
 # =========================
 
 # Reload waybar CSS only
-#pkill -USR2 waybar
-pkill waybar && waybar &
+#pkill -USR2 waybar #does not work anymore
+#pkill waybar && waybar &
 
 # Update openrgb colors
-python ~/.config/rofi/scripts/openrgb_setup.py
+#python ~/.config/matugen/post-hook-scripts/openrgb_setup.py
 
 # Close rofi cleanly
 pkill rofi

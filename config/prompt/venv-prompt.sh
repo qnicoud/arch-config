@@ -9,5 +9,5 @@ __venv_ps1 ()
     if ! [ -z "${VIRTUAL_ENV_PROMPT}" ] ; then
         venv_string=$(echo "${VIRTUAL_ENV_PROMPT}" | sed -E 's/\)|\(//g')
         printf -- "$printf_format" "$venv_string"
-    elif fi
+    fi
 }

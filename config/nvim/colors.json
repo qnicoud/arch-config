@@ -1,0 +1,17 @@
+{
+  "surface_container_lowest": "#140d08",
+  "surface_dim": "#19120c",
+  "surface": "#19120c",
+  "surface_container_low": "#221a14",
+  "surface_container": "#261e18",
+  "surface_container_high": "#312822",
+  "surface_container_highest": "#3c332c",
+  "outline": "#9e8e82",
+  "outline_variant": "#51443b",
+  "on_surface": "#efe0d6",
+  "on_surface_variant": "#d6c3b6",
+  "primary": "#ffb77b",
+  "secondary": "#e3c0a6",
+  "tertiary": "#c4cb97",
+  "error": "#ffb4ab"
+}
