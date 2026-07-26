@@ -20,7 +20,7 @@
             "reveal-delay": 450
         },
         "modules" : [
-            "custom/apps", "custom/terminal", "custom/vscode", "custom/explorer", "custom/firefox", "custom/notes"
+            "custom/apps", "custom/terminal", "custom/vscode", "custom/discord", "custom/explorer", "custom/firefox", "custom/notes"
         ]
     },
 

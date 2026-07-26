@@ -11,39 +11,46 @@
   },
   "custom/terminal": { 
     "format": " ",
-    "tooltip": false,
+    "tooltip-format": "Terminal",
     "cursor": true,
     "on-click": "kitty"
   },
   "custom/vscode": { 
     "format": " ",
-    "tooltip": false,
+    "tooltip-format": "VSCode",
     "cursor": true,
     "on-click": "code"
   },
    "custom/explorer": { 
     "format": " ",
-    "tooltip": false,
+    "tooltip-format": "Folders",
     "cursor": true,
     "on-click": "nautilus"
   },
    "custom/firefox": { 
     "format": " ",
-    "tooltip": false,
+    "tooltip-format": "Firefox",
     "cursor": true,
     "on-click": "firefox"
   },
+   "custom/discord": { 
+    "format": " ",
+    "tooltip-format": "Discord",
+    "cursor": true,
+    "on-click": "vesktop"
+  },
    "custom/notes": { 
     "format": "󰺿 ",
-    "tooltip": false,
+    "tooltip-format": "Doom EMACS",
     "cursor": true,
     "on-click": "gtk-launch doom"
   },
    "custom/apps" : {
     "format" : "󰣇 ",
+    "tooltip-format": "Menu",
     "font-family" : "UbuntuMonoNerdFont",
     "font-weight" : 400,
-    "on-click-right" : "~/.config/rofi/scripts/menu.sh"
+    "on-click" : "~/.config/rofi/scripts/menu.sh"
   },
   "custom/notification" : {
     "tooltip" : true,
