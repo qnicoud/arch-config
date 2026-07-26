@@ -11,3 +11,6 @@ for dir in $(find $SOURCE/local_share -mindepth 1 -maxdepth 1 -type d -not -name
     cp -r $dir "${HOME}/.local/share/"
     #ln -s $dir "${HOME}/.config/"
 done
+
+rm /home/quentin/.bashrc
+ln -s /home/$USER/.config/profile/bashrc /home/$USER/.bashrc
