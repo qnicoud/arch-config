@@ -190,8 +190,8 @@ hl.config({
         gaps_out = 15,
         border_size = 2,
         col = {
-            active_border = { colors = { colors.primary_container, colors.secondary_container }, angle = 45 },
-            inactive_border = surface,
+            active_border = { colors = { colors.primary, colors.secondary }, angle = 45 },
+            inactive_border = colors.primary_container,
         },
         -- Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,

@@ -14,7 +14,7 @@ alias tor="QT_QPA_PLATFORM=xcb torbrowser-launcher &"
 
 # Shortcuts for bashrc sourcing and editing
 alias brcs="source /home/quentin/.config/profile/bashrc 'quiet'"
-alias brce="nv /home/quentin/.config/profile/bashrc"
+alias brce="cd /home/quentin/.config/profile/ && nv bashrc && cd -"
 alias brc="brce && brcs"
 
 # Aliasses for editors and frequently used commands

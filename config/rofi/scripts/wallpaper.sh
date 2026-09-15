@@ -14,14 +14,20 @@ mkdir -p "$CACHE"
 # =========================
 # Generate thumbnails (static only)
 # =========================
-for img in "$WALL_DIR"/*.{jpg,jpeg,png,webp}; do
+for img in "$WALL_DIR"/*.{jpg,jpeg,png,webp,gif}; do
     [ -e "$img" ] || continue
 
     base="$(basename "$img")"
     thumb="$CACHE/$base.png"
 
     if [ ! -f "$thumb" ]; then
-        magick "$img" -resize 200x200 -quality 40 "$thumb"
+        if [[ "$img" =~ "gif" ]] ; then
+            convert "$img[0]" "${img}.png"
+            magick "${img}.png" -resize 200x200 -quality 40 "$thumb"
+            rm "${img}.png"
+        else
+            magick "$img" -resize 200x200 -quality 40 "$thumb"
+        fi
     fi
 done
 
@@ -37,7 +43,8 @@ choice=$((
 
     for img in "$WALL_DIR"/*.gif; do
         [ -e "$img" ] || continue
-        basename "$img"
+        base="$(basename "$img")"
+        echo -e "$base\x00icon\x1f$CACHE/$base.png"
     done
 ) | rofi -dmenu \
         -theme ~/.config/rofi/wallpaper.rasi \

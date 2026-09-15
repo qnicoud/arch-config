@@ -31,18 +31,17 @@ hl.env("QT_QPA_PLATFORM", "wayland")
 -----------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("QT_QPA_PLATFORM=xcb openrgb --startminimized --server")
-    hl.exec_cmd("nm-applet &")
-    hl.exec_cmd("bash .config/hypr/scripts/startWaybar.sh")
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("hypridle")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("sleep 10 && QT_QPA_PLATFORM=xcb openrgb --startminimized --server") --start openrgb for matugen triggered LED coloring
+    hl.exec_cmd("nm-applet &")                                                       --start network manager task bar applet
+    hl.exec_cmd("bash .config/hypr/scripts/startWaybar.sh")                          --start task bar
+    hl.exec_cmd("swaync")                                                            --notification center
+    hl.exec_cmd("hypridle")                                                          --to handle automatic session lock
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")                            --policy handling
     hl.exec_cmd("steam -silent &")
-    hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("hyprsunset")
-    hl.exec_cmd("kitty", { monitor = "DP-2", workspace = "2 silent" })
-    hl.exec_cmd("kitty btop", { monitor = "DP-2", workspace = "2 silent", maxsize = "80 64" })
-    hl.exec_cmd("firefox", { monitor = "DP-1", workspace = "1  silent" })
+    hl.exec_cmd("awww-daemon")                                                       --to handle wallpaper changes
+    hl.exec_cmd("hyprsunset")                                                        --to handle blue filter on the evenning
+    hl.exec_cmd("kitty", { monitor = "DP-2", workspace = "1 silent" })
+    hl.exec_cmd("firefox", { monitor = "DP-1", workspace = "2  silent" })
 end)
 
 -------------
@@ -104,12 +103,12 @@ hl.window_rule({
 -- Bind workspace helper to DP-1 for browser etc
 hl.workspace_rule({
     workspace = "1",
-    monitor = "DP-1",
+    monitor = "DP-2",
     default = true,
 })
 hl.workspace_rule({
     workspace = "2",
-    monitor = "DP-2",
+    monitor = "DP-1",
     default = true,
 })
 

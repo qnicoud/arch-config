@@ -26,9 +26,14 @@ export HISTSIZE=2000
 export HISTFILESIZE=5000
 #export PROMPT_COMMAND='history -a' #Not working with oh my posh
 
+
 # Path and env variables
 . "$HOME/.local/share/../bin/env"
+
 
 # Add doom emacs to the path
 export PATH=${PATH}:~/.config/emacs/bin
 
+
+# Screenshots location
+export HYPRSHOT_DIR=/home/quentin/Pictures/Screenshots

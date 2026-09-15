@@ -31,6 +31,7 @@ return {
             ensure_installed = {
                 "cssls",
                 "elmls",
+                "qmlls",
                 "graphql",
                 "html",
                 "lua_ls",

@@ -3,7 +3,7 @@
 echo "Installer yay"
 sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     usbutils pavucontrol pulseaudio nvidia nvidia-utils \
-    nerd-fonts sww wofi mlocate loupe discord sddm rhythmbox \
+    nerd-fonts awww wofi mlocate loupe discord sddm rhythmbox \
     bluez bluez-utils gnome-bluetooth-3.0a bluetui bluetoothctl pulseaudio-bluetooth ttf-font-awesome otf-font-awesome \
     unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full libvirt  virt-manager \
     dnsmasq dmidecode dart-sass dart-sass gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
@@ -42,5 +42,6 @@ echo "yay -S minecraft-launcher gnome-keyring"
 sudo pacman -Sy openrgb-bin freecad
 echo "yay -Sy cura-bin"
 echo "pour configurer materia gtk transparent theme  : https://github.com/ckissane/materia-theme-transparent/blob/master/INSTALL.md"
-echo "pour configurer SDDM, c'est ici https://framagit.org/MarianArlt/sddm-sugar-candy"
+oecho "pour configurer SDDM, c'est ici https://framagit.org/MarianArlt/sddm-sugar-candy"
 echo 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)'
+echo "Pour installer dungeon draft, export DUNGEONDRAFT_DOWNLOAD_URL='url de humble bundle (manual installation)' puis yay -S dungeondraft"

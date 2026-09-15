@@ -7,6 +7,13 @@
       "mode" : "year",
       "weeks-pos" : "right",
       "mode-mon-col" : 3,
+      /*"format" : {
+        "months" : "<span class='months'><b>{}</b></span>",
+        "weeks" : "<span class='weeks'><b>W{}</b></span>",
+        "weekdays" : "<span class='weekdays'><b>{}</b></span>",
+        "days" : "<span class='days'>{}</span>",
+        "today" : "<span class='today'><b>{}</b></span>"
+      }*/
       "format" : {
         "months" : "<span color='#acb0d0'><b>{}</b></span>",
         "weeks" : "<span color='#7aa2f7'><b>W{}</b></span>",
@@ -25,7 +32,7 @@
         "format-connected-battery": "{device_alias}",
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}     {device_battery_percentage}%",
         "on-click": "hyprctl eval \"hl.exec_cmd('kitty bluetui')\""
     },
   "tray" : {

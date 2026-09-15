@@ -6,6 +6,18 @@
 eval "$(uv generate-shell-completion bash)"  # For bash
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_OPTS="--style=full --height=40%"
+
+#======================================================================================================
+# Configuration of kubernetes functionalities
+export KUBE_EDITOR="nvim"
+source /usr/share/bash-completion/bash_completion
+source <(kubectl completion bash)
+alias k=kubectl
+alias kn=kubens
+alias kx=kubectx
+complete -o default -F __start_kubectl k
+alias manifests="cd /mnt/shared_drive_pi/manifests/"
 
 # Load venv in curr folder
 function load_venv {
@@ -45,7 +57,7 @@ function gitchk {
         rm ~/.gitchk 2> /dev/null
         touch ~/.gitchk.ongoing ~/.gitchk
 	    FOUND="FALSE"
-	    for repo in $(find ~ -type d -name ".git" ! -name "*.cache*" 2>/dev/null) ; do
+	    for repo in $(find ~ -type d -name ".git" ! -name "*.cache*" ! -name "*.local*" 2>/dev/null) ; do
 		    builtin cd ${repo}/../
 		    if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
 			    #[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"

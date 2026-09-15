@@ -137,11 +137,6 @@ tooltip label {
   background-color: @bg1;
 }
 
-#tray {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 #custom-apps,
 #custom-terminal,
 #custom-explorer,
@@ -173,6 +168,28 @@ trough highlight {
 }
 
 /*======= TRAY =======*/
+#clock.calendar-today {
+  color: #ff0000;
+}
+#clock.calendar-days {
+  color: #00ff00;
+}
+#clock.calendar-weeks {
+  color: #0000ff;
+}
+#clock.calendar-weekdays {
+  color: #fff000;
+}
+#clock.calendar-months {
+  color: #ff00ff;
+}
+
+/*======= TRAY =======*/
+#tray {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #tray menu {
   background-color: alpha(@bg0, 0.8);
   padding: 5px;
