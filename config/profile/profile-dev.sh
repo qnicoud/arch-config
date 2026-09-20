@@ -32,57 +32,52 @@ function load_venv {
 }
 
 # Check personnal git repos for unstaged or uncomitted modifications
-function gitchk {
-    
-    if [ ! -z $1 ] && [[ $1 == "QUIET" ]]; then
-        VERBOSE="False"
-    else
-        VERBOSE="True"
+alias gitchk="/home/quentin/.config/profile/gitchk.sh"
+
+# Change curr dir for dev repo dir
+function cdp {
+    list_gits=($(ls -d ~/bin/git-repos-personal/*))
+
+    if [ ! -z $1 ] && [[ " ${list_gits[*]} " =~ "/${1} " ]] ; then
+        cd ~/bin/git-repos-personal/${1}
+        return
     fi
     
-	[ $VERBOSE == "True" ] && echo
+    echo -e "\n  ${GREEN}List of personnal gits:${RESTORE}"
+    CNT=0
+    for git_folder in ${list_gits[@]} ; do
+        CNT=$((CNT+1))
+        if grep -q "${git_folder}" ~/.gitchk 2> /dev/null ; then
+            PREFIX="${RED}"
+            SUFFIX=" (changes to stage/commit/push)${RESTORE}"
+        else
+            PREFIX=""
+            SUFFIX=""
+        fi
+        echo -e "${ITALIC}${PREFIX} \t${CNT} - $(basename $git_folder)${SUFFIX}${NOITALIC}"
 
-    if [ -f ~/.gitchk.ongoing ] ; then
-        if find ~ -maxdepth 1 -name ".gitchk.ongoing" -cmin -10 | grep -q .gitchk.ongoing ; then
-            [ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo are already being checked elsewhere. ${RESTORE}"
-            [ $VERBOSE == "True" ] && echo
+    done
+
+    answer=""
+    echo
+    while true; do
+        read -p " Which repo to go to (q to quit): " answer
+        if [[ $answer =~ ^[[:digit:]]+$ ]] ; then
+            if [ $answer -ge 1 ] && [ $answer -le $CNT ]; then
+                break
+            else
+                echo -e "${ITALIC} \tPlease enter a number between 1 and ${CNT} (or q)${NOITALIC}"
+            fi
+        elif [[ $answer == "q" ]] ; then
             return
         else
-            rm ~/.gitchk.ongoing 2>/dev/null
+            echo -e "${ITALIC} \tPlease enter a number between 1 and ${CNT} (or q)${NOITALIC}"
         fi
-    fi
-
-    if [ ! -f ~/.gitchk ] || find ~ -maxdepth 1 -name '.gitchk' -mmin +2 | grep -q .gitchk ; then 
-    	CURR_DIR=$(pwd)
-        rm ~/.gitchk 2> /dev/null
-        touch ~/.gitchk.ongoing ~/.gitchk
-	    FOUND="FALSE"
-	    for repo in $(find ~ -type d -name ".git" ! -name "*.cache*" ! -name "*.local*" 2>/dev/null) ; do
-		    builtin cd ${repo}/../
-		    if git remote -v | grep -q qnicoud && [ ! -z "$(git status --porcelain)" ] ; then
-			    #[ ! -z "$(git status --porcelain)" ] && echo -e "\t- $(dirname $repo)" && FOUND="TRUE"
-                FOUND="TRUE" 
-                echo $(dirname $repo) >> ~/.gitchk
-		    fi
-	    done
-	    cd $CURR_DIR
-        rm ~/.gitchk.ongoing
-    elif [ -e ~/.gitchk ] && [ ! -s ~/.gitchk ]; then
-        FOUND="FALSE"
-    elif [ -e ~/.gitchk ] && [ -s ~/.gitchk ]; then
-        FOUND="TRUE"
-    fi
-
-	[ $VERBOSE == "True" ] && echo -e "   ${GREEN}Local repo with changes to commit/push: ${RESTORE}"
-    if [ $FOUND == "TRUE" ] ; then
-        for repo in $(cat ~/.gitchk) ; do
-            [ $VERBOSE == "True" ] && printf '\t- \e]8;;$(dirname $repo)\e\\'$(basename $repo)'\e]8;;\e\\\n' 
-        done
-	elif [ $FOUND == "FALSE" ] && [ $VERBOSE == "True" ] ; then
-  		echo -e "\t- Everything is clean!"
-	fi
-    [ $VERBOSE == "True" ] && echo
+    done
+    echo -e "\n ${BLUE}Switching to ${list_gits[$((answer-1))]}${RESTORE}"
+    cd ${list_gits[$((answer-1))]}
 }
+
 
 # Start or stop jupyterlab -- deprecated TODO: correct fucntion to start jupyterlab via uv
 function jupyterlab_switch {

@@ -1,6 +1,24 @@
 #!/bin/bash
 
 #====================================================================
+# Hyprland related functions
+
+function resetFloat() {
+    re='^[0-9]+$'
+    if ! [[ $1 =~ $re ]] ; then
+        echo "Param refers to no workspace. Defaulting to workspace 1."
+        ws="1"
+    else
+        ws=$1
+    fi
+
+    for pidFloat in $(hyprctl clients | grep -A7 "workspace: ${ws} " | grep -oE 'pid: [0-9]+' | cut -d' ' -f2) ; do
+        hyprctl eval "hl.dispatch(hl.dsp.window.float({window=\"pid:$pidFloat\"}))"
+        hyprctl eval "hl.dispatch(hl.dsp.window.float({window=\"pid:$pidFloat\"}))"
+    done
+}
+
+#====================================================================
 # 3D printing  related functions
 
 alias models="cd ~/Documents/3D_models/ && ls"
