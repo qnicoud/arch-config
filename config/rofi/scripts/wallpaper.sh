@@ -122,3 +122,15 @@ pkill rofi
     pkill swaync
     swaync &
 ) &
+
+HYPRLOCK_FONTS="$(grep $choice $WALL_DIR/fonts.csv)"
+echo $HYPRLOCK_FONTS
+if [ -n "$HYPRLOCK_FONTS" ] ; then
+    sed -i "s/fontHour/$(echo $HYPRLOCK_FONTS | cut -d, -f2)/g" ~/.config/hypr/hyprlock.conf
+    sed -i "s/fontDate/$(echo $HYPRLOCK_FONTS | cut -d, -f3)/g" ~/.config/hypr/hyprlock.conf
+    sed -i "s/fontUser/$(echo $HYPRLOCK_FONTS | cut -d, -f4)/g" ~/.config/hypr/hyprlock.conf
+else
+    sed -i "s/fontHour/Berkshire Swash/g" ~/.config/hypr/hyprlock.conf
+    sed -i "s/fontDate/Berkshire Swash/g" ~/.config/hypr/hyprlock.conf
+    sed -i "s/fontUser/Caveat/g" ~/.config/hypr/hyprlock.conf
+fi

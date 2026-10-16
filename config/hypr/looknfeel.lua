@@ -134,6 +134,13 @@ hl.window_rule({
     border_color = { colors = { colors.error, colors.error }, angle = 45 },
 })
 
+hl.window_rule({
+    match = {
+        title = "KDE Connect Daemon",
+    },
+    no_blur = true,
+})
+
 -- LAYERRULES
 hl.layer_rule({
     name = "layer-notifications",

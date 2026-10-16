@@ -29,6 +29,8 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty nvim"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("proton-mail"))
 
 -- Utility scripts and sub-menus
+hl.bind(mainMod .. " + CTRL + V",
+    hl.dsp.exec_cmd("kitty --class clipse -e clipse", { float = true, size = { 622, 652 }, stay_focused = true }))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/hypr/scripts/colorpick.sh"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/startWaybar.sh"))
 hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("~/.config/rofi/scripts/wallpaper.sh"))

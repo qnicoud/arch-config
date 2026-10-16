@@ -34,6 +34,7 @@ export HISTFILESIZE=5000
 # Add doom emacs to the path
 export PATH=${PATH}:~/.config/emacs/bin
 
+# Android studio dev
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 
-# Screenshots location
-export HYPRSHOT_DIR=/home/quentin/Pictures/Screenshots

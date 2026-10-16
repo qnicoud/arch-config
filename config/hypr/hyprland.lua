@@ -26,6 +26,8 @@ hl.env("XDG_MENU_PREFIX", "arch-")
 hl.env("XDG_DATA_HOME", "/home/quentin/.local/share/")
 hl.env("QT_QPA_PLATFORM", "wayland")
 
+hl.env("HYPRSHOT_DIR", "/home/quentin/Pictures/Screenshots/")
+
 -----------------
 --- AUTOSTART ---
 -----------------
@@ -42,6 +44,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset")                                                        --to handle blue filter on the evenning
     hl.exec_cmd("kitty", { monitor = "DP-2", workspace = "1 silent" })
     hl.exec_cmd("firefox", { monitor = "DP-1", workspace = "2  silent" })
+    hl.exec_cmd("clipse -listen")
 end)
 
 -------------

@@ -10,7 +10,7 @@ sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch swaync matugen wf-recorder pamixer \
     vlc-plugin-ffmpeg cmus qbittorrent picard uv
 
-echo "yay -S vim-plug proton-mail virtio-win superfile" 
+echo "yay -S vim-plug proton-mail virtio-win superfile snappy-switcher clipse" 
 
 echo "Hyprland & related tools"
 sudo pacman -Sy egl-wayland nwg-displays hypridle hyprcursor waybar hyprland
