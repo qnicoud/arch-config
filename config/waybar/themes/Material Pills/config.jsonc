@@ -1,28 +1,29 @@
 {
-    // General //
-    "position": "top",
-    "margin-top": 10,
-
-
-    // Modules and groups positionning //
-    "modules-left": [
-        "group/user-apps#groups" ,"group/ressource-usage#groups", "clock", "mpris", "hyprland/submap"
-    ],
-    
-    "modules-center": [
-        "hyprland/workspaces", "custom/notification"
-    ],
-    
-    "modules-right":[
-        "bluetooth", "group/group-volume#groups", "network", "group/tray-drawer#groups"
-    ],
-
-
-    // Groups and modules configuration //
-    "include": [ 
-        "~/.config/waybar/modules/custom-modules.jsonc",
-        "~/.config/waybar/modules/generic-modules.jsonc",
-        "~/.config/waybar/modules/hyprland-modules.jsonc",
-        "~/.config/waybar/groups.jsonc"
-    ]
+  "position": "top",
+  "margin-top": 10,
+  "modules-left": [
+    "group/user-apps#groups",
+    "group/ressource-usage#groups",
+    "clock",
+    "mpris",
+    "hyprland/submap"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/notification"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "group/group-volume#groups",
+    "network",
+    "group/tray-drawer#groups",
+    "custom/hyprwhspr"
+  ],
+  "include": [
+    "~/.config/waybar/modules/custom-modules.jsonc",
+    "~/.config/waybar/modules/generic-modules.jsonc",
+    "~/.config/waybar/modules/hyprland-modules.jsonc",
+    "~/.config/waybar/groups.jsonc",
+    "/home/quentin/.config/waybar/hyprwhspr-module.jsonc"
+  ]
 }

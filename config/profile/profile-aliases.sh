@@ -21,12 +21,32 @@ alias brc="brce && brcs"
 alias v="vim"
 alias nv="nvim"
 alias hypr="cd ~/.config/hypr && nv hyprland.lua && cd -"
-alias home="cd && clear && fastfetch"
-
+# Check personnal git repos for unstaged or uncomitted modifications
+alias gitchk="/home/quentin/.config/profile/gitchk.sh"
 
 #=======================================================================================================
 # functions
 
+home() {
+    local OPTIND flag mode="default"
+
+    while getopts "gq" flag; do
+        case "$flag" in
+            g) mode="git" ;;
+            q) mode="quiet" ;;
+            *) echo "Usage: home [-g | -q]" >&2; return 1 ;;
+        esac
+    done
+    shift $((OPTIND - 1))
+
+    cd || return 1
+    clear
+    case "$mode" in
+        git)     fastfetch && gitchk ;;
+        quiet)   ;;
+        default) fastfetch ;;
+    esac
+}
 
 # Function to open multiple terminals at once
 function kk { 

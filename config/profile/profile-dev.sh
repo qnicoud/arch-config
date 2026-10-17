@@ -31,9 +31,6 @@ function load_venv {
     fi
 }
 
-# Check personnal git repos for unstaged or uncomitted modifications
-alias gitchk="/home/quentin/.config/profile/gitchk.sh"
-
 # Change curr dir for dev repo dir
 function cdp {
     list_gits=($(ls -d ~/bin/git-repos-personal/*))

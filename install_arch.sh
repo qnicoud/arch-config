@@ -8,9 +8,9 @@ sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
     unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full libvirt  virt-manager \
     dnsmasq dmidecode dart-sass dart-sass gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
     perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch swaync matugen wf-recorder pamixer \
-    vlc-plugin-ffmpeg cmus qbittorrent picard uv
+    vlc-plugin-ffmpeg cmus qbittorrent picard uv python-cairo gtk4 gtk4-layer-shell
 
-echo "yay -S vim-plug proton-mail virtio-win superfile snappy-switcher clipse" 
+echo "yay -S vim-plug proton-mail virtio-win superfile snappy-switcher clipse hyprwhspr" 
 
 echo "Hyprland & related tools"
 sudo pacman -Sy egl-wayland nwg-displays hypridle hyprcursor waybar hyprland
