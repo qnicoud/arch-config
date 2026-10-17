@@ -40,6 +40,14 @@ hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("~/.config/rofi/scripts/sddm.
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/rofi/scripts/wbswitcher.sh"))
 hl.bind(mainMod .. " + ALT + SPACE", hl.dsp.exec_cmd("~/.config/rofi/scripts/menu.sh"))
 
+-- Switch windows
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+-- Switch windows in group
+hl.bind(mainMod .. "+ CTRL + left", hl.dsp.group.prev())
+hl.bind(mainMod .. "+ CTRL + right", hl.dsp.group.next())
+
+
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

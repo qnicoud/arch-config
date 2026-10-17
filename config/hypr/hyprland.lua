@@ -8,8 +8,8 @@
 require("bindings")
 require("looknfeel")
 require("monitors")
---Matugen colors
-require("colors")
+-- Matugen colors
+local colors = require("colors")
 
 -----------------------------
 --- ENVIRONMENT VARIABLES ---
@@ -45,6 +45,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kitty", { monitor = "DP-2", workspace = "1 silent" })
     hl.exec_cmd("firefox", { monitor = "DP-1", workspace = "2  silent" })
     hl.exec_cmd("clipse -listen")
+    hl.exec_cmd("snappy-switcher --daemon")
 end)
 
 -------------
@@ -79,6 +80,7 @@ hl.device({
 --- WINDOWS AND WORKSPACES ---
 ------------------------------
 
+
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
     name           = "suppress-maximize-events",
@@ -101,6 +103,23 @@ hl.window_rule({
     },
 
     no_focus = true,
+})
+
+local vscode = "^(code|Code|code-oss)$"
+
+hl.window_rule({
+    match     = {
+        class = vscode
+    },
+    workspace = 11,
+})
+
+hl.window_rule({
+    match = {
+        class = vscode,
+        workspace = 11,
+    },
+    group = "set lock invade",
 })
 
 -- Bind workspace helper to DP-1 for browser etc

@@ -190,6 +190,9 @@ hl.layer_rule({
 ----------------------
 --- GENERAL CONFIG ---
 ----------------------
+local function alpha(color, aa)
+    return (color:gsub("%x%x%)$", aa .. ")"))
+end
 
 hl.config({
     general = {
@@ -239,9 +242,34 @@ hl.config({
         disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
     },
 
-    -- CURSOR
+    -- CURSOR CONFIG
     cursor = {
         hide_on_key_press = true,
         inactive_timeout = 3,
     },
+
+    -- GROUP CONFIG
+    group = {
+        drag_into_group = 1,
+        groupbar = {
+            height = 18,
+            indicator_height = 0,
+            font_size = 11,
+            font_weight_active = "bold",
+            font_weight_inactive = "normal",
+            gradient_rounding = 8,
+            gradient_round_only_edges = false,
+            text_color = "rgba(ffffffff)",
+            disable_when_only = true, -- cache la barre s'il n'y a qu'une fenêtre
+            blur = false,
+            gradients = true,
+            col = {
+                active          = colors.primary,
+                inactive        = alpha(colors.on_primary, "aa"),
+                locked_active   = alpha(colors.primary, "aa"),
+                locked_inactive = alpha(colors.on_primary, "aa"),
+            },
+        },
+    },
+
 })
