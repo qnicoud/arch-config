@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/goodroot/hyprwhspr/main/share/config.schema.json",
+  "external_bindings": true,
+  "transcription_backend": "cohere-transcribe",
+  "audio_ducking": true,
+  "use_hypr_bindings": true,
+  "mic_osd_sytle": "pill",
+  "language": "fr"
+}
