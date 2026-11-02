@@ -141,6 +141,15 @@ hl.window_rule({
     no_blur = true,
 })
 
+hl.window_rule({
+    match = {
+        title = "^(zettel-ai)$",
+    },
+    workspace = "special:zettel",
+    float = true,
+    center = true,
+})
+
 -- LAYERRULES
 hl.layer_rule({
     name = "layer-notifications",
@@ -187,6 +196,17 @@ hl.layer_rule({
     ignore_alpha = 0.5,
 })
 
+hl.layer_rule({
+    name = "layer-hyprbinds-backdrop",
+    match = {
+        namespace = "^hyprbinds-backdrop$",
+    },
+    blur = true,
+    ignore_alpha = 0.0,
+    animation = "fade",
+})
+
+
 ----------------------
 --- GENERAL CONFIG ---
 ----------------------
@@ -223,8 +243,11 @@ hl.config({
         blur = {
             enabled = true,
             size = 4,
-            passes = 2,
+            passes = 3,
+            contrast = 1.5,
+            noise = 0.08,
             vibrancy = 0.1696,
+            new_optimizations = true,
         },
     },
     animations = {
@@ -259,16 +282,21 @@ hl.config({
             font_weight_inactive = "normal",
             gradient_rounding = 8,
             gradient_round_only_edges = false,
-            text_color = "rgba(ffffffff)",
+            text_color = "rgba(222222ff)",
+            text_color_inactive = "rgba(ffffffcc)",
             disable_when_only = true, -- cache la barre s'il n'y a qu'une fenêtre
             blur = false,
             gradients = true,
             col = {
-                active          = colors.primary,
+                active          = alpha(colors.primary, "aa"),
                 inactive        = alpha(colors.on_primary, "aa"),
                 locked_active   = alpha(colors.primary, "aa"),
                 locked_inactive = alpha(colors.on_primary, "aa"),
             },
+        },
+        col = {
+            border_active = { colors = { colors.primary, colors.secondary }, angle = 45 },
+            border_inactive = colors.primary_container,
         },
     },
 

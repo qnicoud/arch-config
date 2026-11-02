@@ -1,0 +1,10 @@
+@define-color background-color #0f1417F2;
+@define-color border-color #8fcef3;
+@define-color bar-color-left #8fcef3;
+@define-color bar-color-right #b5c9d7;
+@define-color recording-dot #ffb4ab;
+@define-color text-color #dfe3e7;
+@define-color paused-dot #cac1ea;
+@define-color processing-dot #b5c9d7;
+@define-color error-dot #ffb4ab;
+@define-color success-dot #b5c9d7;

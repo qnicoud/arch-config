@@ -46,6 +46,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("firefox", { monitor = "DP-1", workspace = "2  silent" })
     hl.exec_cmd("clipse -listen")
     hl.exec_cmd("snappy-switcher --daemon")
+    hl.exec_cmd("/usr/bin/kdeconnectd")
 end)
 
 -------------
@@ -105,22 +106,39 @@ hl.window_rule({
     no_focus = true,
 })
 
-local vscode = "^(code|Code|code-oss)$"
+local VSCODE_CLASSES   = { code = true, Code = true, ["code-oss"] = true }
+local VSCODE_WORKSPACE = 11
 
 hl.window_rule({
-    match     = {
-        class = vscode
-    },
-    workspace = 11,
+    match     = { class = "^(code|Code|code-oss)$" },
+    workspace = VSCODE_WORKSPACE,
 })
 
-hl.window_rule({
-    match = {
-        class = vscode,
-        workspace = 11,
-    },
-    group = "set lock invade",
-})
+-- Groupe non verrouillé : en 0.56.2, group:add échoue sur un groupe verrouillé
+-- et hl.dsp.group.lock n'a aucun effet depuis Lua.
+hl.on("window.open", function(win)
+    if not VSCODE_CLASSES[win.class] then return end
+    if win.group then return end -- déjà groupée (auto_group l'a ajoutée au groupe actif)
+
+    for _, other in ipairs(hl.get_workspace_windows(VSCODE_WORKSPACE)) do
+        if other.address ~= win.address and other.group and VSCODE_CLASSES[other.class] then
+            other.group:add(win)
+            return
+        end
+    end
+
+    hl.dispatch(hl.dsp.group.toggle({ window = win }))
+end)
+
+--local vscode = "^(code|Code|code-oss)$"
+
+--hl.window_rule({
+--    match     = {
+--        class = vscode
+--    },
+--    workspace = 11,
+--    group     = "set lock invade",
+--})
 
 -- Bind workspace helper to DP-1 for browser etc
 hl.workspace_rule({
