@@ -71,5 +71,17 @@
     "on-click" : "swaync-client -t -sw",
     "on-click-right" : "swaync-client -d -sw",
     "escape" : true
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Guyancourt --hide-conditions --lang en",
+    "return-type": "json"
+  },
+  "custom/hyprbinds": {
+    "format": " ",
+    "tooltip": true,
+    "on-click": "~/.cargo/bin/hyprbinds"
   }
 }
