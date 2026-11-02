@@ -15,6 +15,7 @@ source ~/.config/profile/prompt-venv.sh
 export GIT_PS1_SHOWUPSTREAM="verbose"
 export GIT_PS1_SHOWDIRTYSTATE="True"
 export GIT_PS1_SHOWCOLORHINTS="True"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "\e[34;2m ── \e[22m󰊢  %s") PS1_CMD2=$(__venv_ps1 "\e[34;2m ── \e[22m󰰫  %s")'; PS1='\n\[\e[34;2m\]╭──\[\e[22m\]  \w${PS1_CMD1}${PS1_CMD2}\[\e[34;2m\] ── \[\e[22m\]  \t\n\[\e[34;2m\]╰──\[\e[1m\]$?\[\e[0;34;2m\]─\[\e[22m\]❯ \[\e[0m\]'
 
 
@@ -33,6 +34,8 @@ export HISTFILESIZE=5000
 
 # Add doom emacs to the path
 export PATH=${PATH}:~/.config/emacs/bin
+# Add cargo binaries to the path
+export PATH=${PATH}:~/.cargo/bin
 
 # Android studio dev
 export ANDROID_HOME="$HOME/Android/Sdk"
