@@ -3,12 +3,14 @@
   "margin-top": 10,
   "modules-left": [
     "group/user-apps#groups",
+    "custom/hyprbinds",
     "group/ressource-usage#groups",
     "clock",
     "mpris",
     "hyprland/submap"
   ],
   "modules-center": [
+    "custom/weather",
     "hyprland/workspaces",
     "custom/notification"
   ],
@@ -24,6 +26,6 @@
     "~/.config/waybar/modules/generic-modules.jsonc",
     "~/.config/waybar/modules/hyprland-modules.jsonc",
     "~/.config/waybar/groups.jsonc",
-    "/home/quentin/.config/waybar/hyprwhspr-module.jsonc"
+    "~/.config/waybar/hyprwhspr-module.jsonc"
   ]
 }
