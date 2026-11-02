@@ -20,6 +20,10 @@ output_path = '~/.config/waybar/colors.css'
 #post_hook = 'pkill -SIGUSR2 waybar'
 post_hook = 'pkill waybar && waybar &'
 
+[templates.hyprbinds]
+input_path = '~/.config/matugen/templates/hyprbinds.css'
+output_path = '~/.config/hyprbinds/colors.css'
+
 [templates.nvim]
 input_path = '~/.config/matugen/templates/nvim-colors.json'
 output_path = '~/.config/nvim/colors.json'
@@ -42,6 +46,11 @@ post_hook = 'python ~/.config/matugen/post-hook-scripts/openrgb_setup.py'
 input_path = "~/.config/matugen/templates/emacs.el"
 output_path = "~/.config/doom/themes/doom-matugen-theme.el"
 post_hook = "~/.config/matugen/post-hook-scripts/emacs-reload-theme.sh"
+
+[templates.hyprwhspr]
+input_path = "~/.config/matugen/templates/hyprwhspr-mic-osd.css"
+output_path = "~/.config/hyprwhspr/theme/mic-osd.css"
+post_hook = "hyprwhspr systemd restart"
 
 # configs from https://github.com/InioX/matugen-themes
 [templates.firefox-website-colors]

@@ -1,0 +1,10 @@
+@define-color background-color {{colors.surface.default.hex}}F2;
+@define-color border-color {{colors.primary.default.hex}};
+@define-color bar-color-left {{colors.primary.default.hex}};
+@define-color bar-color-right {{colors.secondary.default.hex}};
+@define-color recording-dot {{colors.error.default.hex}};
+@define-color text-color {{colors.on_surface.default.hex}};
+@define-color paused-dot {{colors.tertiary.default.hex}};
+@define-color processing-dot {{colors.secondary.default.hex}};
+@define-color error-dot {{colors.error.default.hex}};
+@define-color success-dot {{colors.secondary.default.hex}};
