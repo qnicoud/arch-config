@@ -10,5 +10,6 @@ for local_dir in $(find $SOURCE/local_share -mindepth 1 -maxdepth 1 -type d -not
     cp -r ~/.local/share/${local_dir}/ ./local_share
 done
 
-
 cp ~/.vim/vimrc  ~/.bashrc ./
+
+git status
