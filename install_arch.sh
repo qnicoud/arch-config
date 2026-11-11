@@ -1,26 +1,29 @@
 #!/bin/bash
 
 echo "Installer yay"
-sudo pacman -Sy vim neovim git firefox dolphin kitty polkit \
+sudo pacman -Sy vim neovim git firefox dolphin kitty polkit clamav \
     usbutils pavucontrol pulseaudio nvidia nvidia-utils \
     nerd-fonts awww wofi mlocate loupe discord sddm rhythmbox \
-    bluez bluez-utils gnome-bluetooth-3.0a bluetui bluetoothctl pulseaudio-bluetooth ttf-font-awesome otf-font-awesome \
-    unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full libvirt  virt-manager \
-    dnsmasq dmidecode dart-sass dart-sass gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
-    perl-image-exiftool pdftk xdg-utils ripgrep fd emacs fastfetch swaync matugen wf-recorder pamixer \
-    vlc-plugin-ffmpeg cmus qbittorrent picard uv python-cairo gtk4 gtk4-layer-shell
+    bluez bluez-utils gnome-bluetooth-3.0a bluetui bluetoothctl \
+    pulseaudio-bluetooth ttf-font-awesome otf-font-awesome \
+    unzip cuda blender gamemode btop wlr-randr rofi-wayland quemu-full \
+    libvirt  virt-manager dnsmasq dmidecode dart-sass dart-sass \
+    gnome-themes-extra gtk-engine-murrine evtest kvantum kvantum-qt5 \
+    perl-image-exiftool pdftk xdg-utils ripgrep fd fastfetch swaync \
+    wf-recorder pamixer vlc-plugin-ffmpeg cmus qbittorrent picard \
+    python-cairo gtk4 gtk4-layer-shell
 
 echo "yay -S vim-plug proton-mail virtio-win superfile snappy-switcher clipse hyprwhspr wttrbar" 
 
 echo "Hyprland & related tools"
-sudo pacman -Sy egl-wayland nwg-displays hypridle hyprcursor waybar hyprland
+sudo pacman -Sy egl-wayland matugen nwg-displays hypridle hyprcursor waybar hyprland
 echo "yay -S hyprshot wlogout rose-pine-hyprcursor rose-pine-cursor" 
 
 echo "Authent polkit related"
 sudo pacman -Sy hyprpolkitagent 
 
 echo "Dev related packages"
-sudo pacman -Sy docker kubectl bash-completion helm arduino-ide jq postgresql
+sudo pacman -Sy docker emacs uv kubectl bash-completion helm arduino-ide jq postgresql
 echo "yay -Sy lazydocker rpi-imager code-translucent"
 #wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh 
 #echo "Après avoir installé conda : sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh"
