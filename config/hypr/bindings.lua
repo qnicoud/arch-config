@@ -57,6 +57,8 @@ hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("/usr/lib/hyprwhspr/config/hyprland/
     { description = "Clipboard speech to text with hyprwhspr." })
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.exec_cmd("~/.local/bin/hyprwhspr-journal"),
     { description = "Speech to text journaling with zettel-ai and hyprwhspr." })
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("zettel-ai && kitty zettel-validate"),
+    { description = "Trigger journal parsing with zettel-ai and validation with zettel-validate." })
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("zettel-ai-vocal"),
     { description = "Vocal interraction with zettel-ai for journaling tasks other than adding knowledge." })
 hl.bind(mainMod .. " + Z", hl.dsp.workspace.toggle_special("zettel"),
